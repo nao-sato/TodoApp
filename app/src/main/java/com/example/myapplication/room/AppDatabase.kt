@@ -22,23 +22,22 @@ abstract class AppDatabase : RoomDatabase(){
         private var INSTANCE: AppDatabase? = null
 
 
-        @InternalCoroutinesApi
-        fun getDatabase(
-                context: Context,
-        ): AppDatabase {
-            /*synchronizedをつけることで複数のスレッドから同時に呼ばれることなくなる。
-            * 先行している処理を待ってそれが終わってからこの処理を開始する（同期実行）仕組みらしい
-            * 共有データを複数スレッドから操作したら、値に矛盾が生じるからあかんらしい*/
-            return INSTANCE ?: synchronized(this){
-                //いでよ、データベース！
-                val instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDatabase::class.java,
-                        "Todo_database"
-                ).build()
-                INSTANCE = instance
-                instance
-            }
-        }
+//        fun getDatabase(
+//                context: Context,
+//        ): AppDatabase {
+//            /*synchronizedをつけることで複数のスレッドから同時に呼ばれることなくなる。
+//            * 先行している処理を待ってそれが終わってからこの処理を開始する（同期実行）仕組みらしい
+//            * 共有データを複数スレッドから操作したら、値に矛盾が生じるからあかんらしい*/
+//            return INSTANCE ?: synchronized(this){
+//                //いでよ、データベース！
+//                val instance = Room.databaseBuilder(
+//                        context.applicationContext,
+//                        AppDatabase::class.java,
+//                        "Todo_database"
+//                ).build()
+//                INSTANCE = instance
+//                instance
+//            }
+//        }
     }//とりあえずデータベースが取れる共通のメソッド完成！
 }

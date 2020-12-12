@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{viewmodel.title}"
+            android:text="@={viewmodel.title}"
             android:hint="@string/ed_title"
             tools:layout_editor_absoluteX="102dp"
             tools:layout_editor_absoluteY="203dp" />
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{viewmodel.contents}"
+            android:text="@={viewmodel.contents}"
             android:hint="@string/ed_contents"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="248dp" />

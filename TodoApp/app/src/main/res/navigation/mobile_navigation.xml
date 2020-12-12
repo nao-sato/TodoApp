@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_all">
+    <fragment
+        android:id="@+id/navigation_all"
+        android:name="com.example.myapplication.ui.all.AllToDoFragment"
+        android:label="fragment_all"
+        tools:layout="@layout/fragment_all" >
+        <action
+            android:id="@+id/action_navigation_all_to_navigation_done"
+            app:destination="@id/navigation_done" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_done"
+        android:name="com.example.myapplication.ui.done.DoneToDoFragment"
+        android:label="fragment_done"
+        tools:layout="@layout/fragment_done" >
+        <action
+            android:id="@+id/action_navigation_done_to_navigation_undone"
+            app:destination="@id/navigation_undone" />
+        <action
+            android:id="@+id/action_navigation_done_to_navigation_all"
+            app:destination="@id/navigation_all" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_undone"
+        android:name="com.example.myapplication.ui.undone.UndoneToDoFragment"
+        android:label="fragment_undone"
+        tools:layout="@layout/fragment_undone" >
+        <action
+            android:id="@+id/action_navigation_undone_to_navigation_done"
+            app:destination="@id/navigation_done" />
+    </fragment>
+</navigation>

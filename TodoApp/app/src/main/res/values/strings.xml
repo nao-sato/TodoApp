@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_home">全て</string>
+    <string name="title_dashboard">未完了</string>
+    <string name="title_notifications">完了</string>
+    <string name="ed_title">タイトル</string>
+    <string name="ed_contents">内容</string>
+    <string name="dia_title">新しいTodo</string>
+    <string name="dia_add">追加</string>
+    <string name="dia_cancel">取り消し</string>
+</resources>

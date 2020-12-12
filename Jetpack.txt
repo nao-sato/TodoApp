@@ -1,0 +1,5974 @@
+﻿Android Jetpackプログラミング Android Studio 4 + Kotlin対応
+
+
+
+
+掲載リスト
+
+
+
+
+リスト1-1
+buildscript {
+    ext.kotlin_version = '1.3.72'
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+
+
+
+リスト1-2
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+
+
+
+リスト1-3
+package com.example.myfirstapp
+
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+
+
+
+
+リスト1-4
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myfirstapp">
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+
+</manifest>
+
+
+
+
+リスト1-5
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+リスト1-6
+<TextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello World!"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.1" />
+
+
+
+
+リスト1-7
+package com.example.myfirstapp
+
+
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.TextView
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val text1 = findViewById<TextView>(R.id.text1)
+        text1.text = "This is sample."
+    }
+}
+
+
+
+
+リスト1-8
+<TextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello World!"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.05" />
+
+
+<Button
+    android:id="@+id/button1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:text="Button"
+    android:textSize="18sp"
+    app:layout_constraintTop_toBottomOf="@+id/text1"
+    tools:layout_editor_absoluteX="0dp" />
+
+
+
+
+リスト1-9
+// import android.widget.Button
+// import android.widget.Toast 以上を追加
+
+
+class MainActivity : AppCompatActivity() {
+    var count = 0
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val text1 = findViewById<TextView>(R.id.text1)
+        text1.text = "This is sample."
+        val button1 = findViewById<Button>(R.id.button1)
+        button1.setOnClickListener {
+            text1.text = "count: " + ++count
+            Toast.makeText(this, "tapped!", Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+}
+
+
+
+
+リスト1-10
+viewBinding {
+    enabled = true
+}
+
+
+
+
+リスト1-11
+buildFeatures{
+    viewBinding = true
+}
+
+
+
+
+リスト1-12
+package com.example.myfirstapp
+
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import com.example.myfirstapp.databinding.ActivityMainBinding
+
+
+class MainActivity : AppCompatActivity() {
+    var count = 0
+    private lateinit var binding: ActivityMainBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        val text1 = binding.text1
+        text1.text = "This is sample."
+        val button1 = binding.button1
+        button1.setOnClickListener {
+            text1.text = "count: " + ++count
+            Toast.makeText(this, "tapped!", Toast.LENGTH_SHORT)
+                    .show()
+        }
+    }
+}
+
+
+
+
+リスト1-13
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+
+
+リスト1-14
+package com.example.myfirstapp
+
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+    var count = 0
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        text1.text = "This is sample."
+        button1.setOnClickListener {
+            text1.text = "count: " + ++count
+            Toast.makeText(this, "tapped!", Toast.LENGTH_SHORT)
+                    .show()
+        }
+    }
+}
+
+
+
+
+リスト1-15
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+</resources>
+
+
+
+
+リスト1-16
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+</resources>
+
+
+
+
+リスト1-17
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffcccc</color>
+    <color name="colorPrimaryDark">#ffaaaa</color>
+    <color name="colorAccent">#aaffff</color>
+</resources>
+
+
+
+
+リスト1-18
+android:theme="@style/AppTheme"
+
+
+
+
+リスト1-19
+<resources>
+
+
+    <style name="AppTheme" 
+            parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme2" 
+            parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorAccent">@color/colorAccent2</item>
+    </style>
+
+
+</resources>
+
+
+
+
+リスト1-20
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="colorPrimary2">#ffcccc</color>
+    <color name="colorPrimaryDark2">#ffaaaa</color>
+    <color name="colorAccent2">#aaffff</color>
+</resources>
+
+
+
+
+リスト1-21
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setTheme(R.style.AppTheme2) //●
+
+
+        setContentView(R.layout.activity_main)
+    }
+}
+
+
+
+
+リスト1-22
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#660000</color>
+    <color name="colorPrimaryDark">#440000</color>
+    <color name="colorAccent">#66cccc</color>
+</resources>
+
+
+
+
+リスト1-23
+// import androidx.appcompat.app.AppCompatDelegate 追加
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        AppCompatDelegate.setDefaultNightMode(
+            AppCompatDelegate.MODE_NIGHT_YES) //●
+    }
+}
+
+
+
+
+リスト1-24
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+</resources>
+
+
+
+
+リスト2-1
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+ 
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.3"
+ 
+    defaultConfig {
+        applicationId "com.example.mycomposeapp"
+        minSdkVersion 28
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+ 
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+ 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "0.1.0-dev13"
+    }
+ 
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+}
+ 
+dependencies {
+ 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+ 
+    def compose_version = "0.1.0-dev13"
+    implementation "androidx.ui:ui-framework:$compose_version"
+    implementation "androidx.ui:ui-layout:$compose_version"
+    implementation "androidx.ui:ui-material:$compose_version"
+    implementation "androidx.ui:ui-animation:$compose_version"
+    implementation "androidx.ui:ui-tooling:$compose_version"
+ 
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+
+
+
+リスト2-2
+package com.example.myfirstapp // プロジェクト名によって変わる
+
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.Composable
+import androidx.ui.core.setContent
+import androidx.ui.foundation.Text
+import androidx.ui.material.MaterialTheme
+import androidx.ui.tooling.preview.Preview
+
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MaterialTheme {
+                Greeting("Compose")
+            }
+        }
+    }
+}
+
+
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello $name!")
+}
+
+
+
+
+リスト2-3
+@Preview
+@Composable
+fun DefaultPreview() {
+    MyFirstAppTheme {
+        Greeting("Android")
+    }
+}
+
+
+
+
+リスト2-4
+// import androidx.ui.text.TextStyle
+// import androidx.ui.unit.sp 以上を追加
+
+
+@Composable
+fun Greeting(name: String) {
+    Text(
+        text = "Hello $name!",
+        style= TextStyle(
+            fontSize = 28.sp
+        )
+    )
+}
+
+
+
+
+リスト2-5
+// import androidx.ui.graphics.Color
+// import androidx.ui.text.font.FontFamily
+// import androidx.ui.text.font.FontStyle
+// import androidx.ui.text.font.FontWeight 以上を追加
+
+
+@Composable
+fun Greeting(name: String) {
+    Text(
+        text = "Hello $name!",
+        style= TextStyle(
+            color= Color.Red,
+            background = Color.Yellow,
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold,
+            fontStyle = FontStyle.Italic,
+            fontFamily = FontFamily.Serif
+        )
+    )
+}
+
+
+
+
+リスト2-6
+// import androidx.compose.state
+// import androidx.ui.foundation.TextField
+// import androidx.ui.foundation.TextFieldValue
+
+
+// import androidx.ui.layout.Column 以上を追加
+
+
+@Composable
+fun Greeting() {
+    var state = state { TextFieldValue("ok") }
+
+
+    Column() {
+        Text(
+            text = "typed:\"" + state.value.text + "\".",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+        TextField(
+            value = state.value,
+            textStyle = TextStyle(fontSize = 20.sp),
+            onValueChange = { state.value = it }
+        )
+    }
+}
+
+
+
+
+リスト2-7
+// import androidx.ui.core.Modifier 追加
+
+
+@Composable
+fun Greeting() {
+    var state = state { TextFieldValue("0") }
+    var message = state { "Hello!" }
+    Column() {
+        Text(
+            text = message.value,
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+        TextField(
+            value = state.value,
+            textStyle = TextStyle(fontSize = 20.sp),
+            onValueChange = { state.value = it }
+        )
+        
+        Button(
+            modifier = Modifier.None,
+            onClick = {
+                val n = state.value.text.toInt()
+                var total = 0
+                for (n in 1..n) {
+                    total += n
+                }
+                message.value = "total: $total"
+            }
+        ) {
+            Text(
+                text = "Click",
+                style= TextStyle(
+                    color= Color.White,
+                    fontSize = 20.sp
+                )
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-8
+// import androidx.ui.layout.Row
+// import androidx.ui.material.Checkbox 以上を追加
+
+
+@Composable
+fun Greeting() {
+    val state = state { true }
+    
+    Column() {
+        Text(
+            text = "checked: " + state.value,
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+        Row {
+            Checkbox(
+                checked = state.value,
+                onCheckedChange = { state.value = it }
+            )
+            Text(
+                text = "Checkbox",
+                style= TextStyle(
+                    fontSize = 20.sp
+                )
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-9
+@Composable
+fun Greeting() {
+    val (state, onState) = state { true }
+    
+    Column() {
+        Text(
+                text = "checked: " + state,
+                style= TextStyle(
+                        color= Color.Red,
+                        fontSize = 28.sp
+                )
+        )
+        Row {
+            Checkbox(
+                    checked = state,
+                    onCheckedChange = onState
+            )
+            Text(
+                    text = "Checkbox",
+                    style= TextStyle(
+                            fontSize = 20.sp
+                    )
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-10
+// import androidx.ui.material.RadioGroup 追記
+
+
+@Composable
+fun Greeting() {
+    val radio = listOf("One", "Two", "Three")
+    val (selected, onSelected) = state { radio[0] }
+    val message = state { "Hello!" }
+    Column() {
+        Text(
+            text = "selected: " + selected,
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+        RadioGroup(
+            options = radio,
+            selectedOption = selected,
+            onSelectedChange = onSelected
+        )
+    }
+}
+
+
+
+
+リスト2-11
+// import androidx.ui.unit.dp
+// import androidx.ui.material.Divider
+// import androidx.ui.foundation.Box
+// import androidx.ui.foundation.clickable
+
+
+ 以上を追加
+
+
+@Composable
+fun Greeting() {
+    val count = state { 0 }
+    val message = state { "ok." }
+    Column {
+        Box(Modifier.clickable(onClick = { count.value += 1 }, enabled = true), children = {
+            Text(
+                text = "tapped: "+count.value,
+                style= TextStyle(
+                    color = Color.Red,
+                    fontSize = 28.sp
+                )
+            )
+        })
+        Divider(thickness = 10.dp)
+        Box(Modifier.clickable(onClick = {
+            var total = 0
+            for(n in 1..count.value) {
+                total += n
+            }
+            message.value = "total: $total"
+        }), children = {
+            Text(
+                text = message.value,
+                style= TextStyle(
+                    color= Color.Red,
+                    fontSize = 28.sp
+                )
+            )
+        })
+    }
+}
+
+
+
+
+リスト2-12
+// import androidx.ui.material.AlertDialog
+// import androidx.ui.material.AlertDialogButtonLayout   追加
+
+
+@Composable
+fun Greeting() {
+    val dlog = state { false }
+    val message = state { "This is alert dialog sample." }
+
+
+    Column {
+        Box(Modifier.clickable(onClick = {
+            dlog.value = true
+        }), children = {
+            Text(
+                text = "Alert",
+                style= TextStyle(
+                    color= Color.Red,
+                    fontSize = 28.sp
+                )
+            )
+        })
+        Divider(thickness = 10.dp)
+
+
+        Text(
+            text = message.value,
+            style= TextStyle(
+                fontSize = 20.sp
+            )
+        )
+
+
+        if (dlog.value) {
+            AlertDialog(
+                onCloseRequest = {
+                    dlog.value = false
+                },
+                title = {
+                    Text(text = "Alert")
+                },
+                text = {
+                    Text("This is sample message.")
+                },
+                confirmButton = {
+                    Button(
+                        modifier = Modifier.None,
+                        onClick = {
+                            message.value = "You select \"OK\" !!"
+                            dlog.value = false
+                        }){
+                        Text("OK")
+                    }
+                },
+                dismissButton = {
+                    Button(
+                        modifier = Modifier.None,
+                        onClick = {
+                            message.value = "you canceled..."
+                            dlog.value = false
+                        }) {
+                        Text("Cancel")
+                    }
+                },
+                buttonLayout = AlertDialogButtonLayout.SideBySide
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-13
+// import androidx.ui.foundation.Canvas
+// import androidx.ui.geometry.Offset
+// import androidx.ui.geometry.Size
+
+
+// import androidx.ui.graphics.Color
+
+
+// import androidx.ui.unit.dp
+// import androidx.ui.unit.sp
+// import androidx.ui.layout.preferredSize 以上を追加
+
+
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp, 500.dp)){
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+
+
+            drawRect(
+                Color.Blue,
+                Offset(100f, 100f),
+                Size(200f, 200f)
+            )
+
+
+            drawRect(
+                Color.Yellow,
+                Offset(200f, 200f),
+                Size(200f, 200f)
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-14
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(500f, 500f)
+            )
+
+
+            drawRoundRect(
+                Color.Blue,
+                Offset(100f, 100f), 
+                Size(300f, 300f),
+                25f, 25f
+            )
+
+
+            drawRoundRect(
+                Color.Yellow,
+                Offset(200f, 200f), 
+                Size(400f, 400f),
+                75f, 75f
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-15
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(500f, 500f)
+            )
+
+
+            drawCircle(
+                Color.Blue,
+                100f,
+                Offset(200f, 200f)
+            )
+
+
+            drawOval(
+                Color.Yellow,
+                Offset(200f, 200f),
+                Size(300f, 100f)
+            )
+        }
+    }
+}
+
+
+
+
+リスト2-16
+// import androidx.ui.graphics.StrokeCap
+// import androidx.ui.graphics.drawscope.Stroke
+// import kotlin.math.PI
+// import kotlin.math.cos
+// import kotlin.math.sin 追加
+
+
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            val center = Offset(200f, 200f) // 中心の位置
+            val r = 150f // 図形の大きさ
+            val x = 5 // 頂点数
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(500f, 500f)
+            )
+
+
+            val stroke = Stroke(20f, 0f, StrokeCap.round)
+
+
+            for(n in 1..x) {
+                val s1 = (sin(2*PI / x * (n - 1))).toFloat()
+                val c1 = (cos(2*PI / x * (n - 1))).toFloat()
+                val s2 = (sin(2*PI / x * n)).toFloat()
+                val c2 = (cos(2*PI / x * n)).toFloat()
+                drawLine(
+                    Color.Red,
+                    Offset(s1 * r + center.dx, c1 * r + center.dy),
+                    Offset(s2 * r + center.dx, c2 * r + center.dy),
+                    stroke
+                )
+            }
+        }
+    }
+}
+
+
+
+
+リスト2-17
+// import androidx.ui.graphics.Path 追加
+
+
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            val paint = Paint()
+            val center = Offset(200f, 200f)
+            val r = 150f
+            val x = 5
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+            
+            val p = Path()
+
+
+            val s = (sin(0f)).toFloat()
+            val c = (cos(0f)).toFloat()
+
+
+            p.moveTo(s * r + center.dx, c * r + center.dy)
+
+
+            for(n in 1..x) {
+                val s = (sin(2*PI / x * n)).toFloat()
+                val c = (cos(2*PI / x * n)).toFloat()
+                p.lineTo(s * r + center.dx, c * r + center.dy)
+            }
+            p.close()
+            drawPath(p, Color.Blue)
+        }
+    }
+}
+
+
+
+
+リスト2-18
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            val paint = Paint()
+            val center = Offset(200f, 200f)
+            val r = 150f
+            val x = 5
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+
+
+            val p = Path()
+
+
+            p.moveTo(100f, 100f)
+            p.cubicTo(500f, 0f, 0f, 500f, 400f, 400f)
+            p.close()
+            p.moveTo(400f, 100f)
+            p.cubicTo(500f, 500f, 0f, 0f, 100f, 400f)
+            p.close()
+            drawPath(p, Color.Green)
+        }
+    }
+}
+
+
+
+
+リスト2-19
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            val center = Offset(300f, 300f)
+            val r = 200f
+            val x = 25
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+
+
+            val stroke = Stroke(2.5f, 0f, StrokeCap.round)
+
+
+            val p = Path()
+
+
+            for(n in 1..x) {
+                val x1 = (sin(2*PI / x * n + PI/4)).toFloat()
+                val y1 = (cos(2*PI / x * n + PI/4)).toFloat()
+                val x2 = (sin(2*PI / x * n)).toFloat()
+                val y2 = (cos(2*PI / x * n)).toFloat()
+                p.moveTo(center.dx, center.dy)
+                p.quadraticBezierTo(
+                    x1 * r + center.dx, y1 * r + center.dy,
+                    x2 * r + center.dx, y2 * r + center.dy
+                )
+                p.close()
+            }
+            p.close()
+            drawPath(p, Color.Blue, 1.0f, stroke)
+        }
+    }
+}
+
+
+
+
+リスト2-20
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            val center = Offset(200f, 200f)
+            val r = 150f
+            val x = 5
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+
+
+            val p = Path()
+
+
+            p.moveTo(100f, 100f)
+            p.cubicTo(500f, 0f, 0f, 500f, 400f, 400f)
+            p.close()
+            p.moveTo(400f, 100f)
+            p.cubicTo(500f, 500f, 0f, 0f, 100f, 400f)
+            p.close()
+            clipPath(p, ClipOp.intersect){
+                for(n in 0..500) {
+                    var cx = getRnd() * 500
+                    var cy = getRnd() * 500
+                    var cr = getRnd() * 25
+                    val c = Color(getRnd(), getRnd(), getRnd())
+                    drawCircle(c, cr, Offset(cx, cy))
+                }
+            }
+        }
+    }
+}
+
+
+fun getRnd():Float = (Math.random()).toFloat()
+
+
+
+
+リスト2-21
+// import androidx.ui.unit.px
+// import androidx.ui.graphics.TileMode
+// import androidx.ui.graphics.LinearGradient 追加
+
+
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+
+
+            val cl = listOf(Color.Red, Color.Yellow)
+            val lg = LinearGradient(cl, 100f, 100f, 400f, 400f)
+
+
+            for(n in 0..250) {
+                val cx = getRnd() * 400 + 100
+                val cy = getRnd() * 400 + 100
+                val cr = getRnd() * 25
+                drawCircle(lg, cr, Offset(cx, cy))
+            }
+        }
+    }
+}
+
+
+fun getRnd():Float = (Math.random()).toFloat()
+
+
+
+
+リスト2-22
+val lg = LinearGradient(cl, 100f, 100f, 170f, 170f, TileMode.Mirror)
+
+
+
+
+リスト2-23
+// import androidx.ui.graphics.RadialGradient 追加
+
+
+
+
+val lg = RadialGradient(cl, 200f, 200f, 70f, TileMode.Mirror)
+
+
+
+
+リスト2-24
+@Composable
+fun Greeting() {
+    Column {
+        Text(
+            text = "Canvas",
+            style= TextStyle(
+                color= Color.Red,
+                fontSize = 28.sp
+            )
+        )
+
+
+        Divider(thickness = 2.dp, color=Color.Gray)
+
+
+        Canvas(modifier = Modifier.preferredSize(500.dp,500.dp)){
+            val paint = Paint()
+            val center = Offset(0f, 0f)
+            val r = 150f
+            val x = 5
+
+
+            drawRect(
+                Color.White,
+                Offset(0f, 0f),
+                Size(800f, 800f)
+            )
+
+
+            val p = Path()
+
+
+            p.moveTo(-200f, -200f)
+            p.cubicTo(300f, -200f, -300f, 200f, 200f, 200f)
+            p.close()
+            p.moveTo(200f, -200f)
+            p.cubicTo(200f, 300f, -200f, -300f, -200f, 200f)
+            p.moveTo(0f, 0f)
+            p.close()
+
+
+            translate(200f, 200f){
+                drawPath(p, Color.Green)
+            }
+            translate(400f, 200f) {
+                scale(0.6f, 0.6f, 0f, 0f) {
+                    rotate(30f, 0f, 0f) {
+                        drawPath(p, Color.Blue)
+                    }
+                }
+            }
+
+
+            translate(200f, 400f) {
+                scale(0.3f, 0.3f, 0f, 0f) {
+                    rotate(60f, 0f, 0f){
+                        drawPath(p, Color.Red)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+リスト3-1
+package com.example.myfirstapp
+
+
+class MyViewModel {
+}
+
+
+
+
+リスト3-2
+package com.example.myfirstapp
+
+
+import androidx.lifecycle.ViewModel
+
+
+class MyViewModel : ViewModel(){
+    private val data:MutableList<Person> = mutableListOf(
+        Person("Taro", "taro@yamada", 36),
+        Person("Hanako", "hanako@flower", 25),
+        Person("Sachiko", "sachiko@happy", 14)
+    )
+
+
+    fun getAll():List<Person> = data
+
+
+    fun getById(id:Int):Person = data[id]
+
+
+    fun add(name:String, mail:String, age:Int) {
+       data.add(Person(name, mail, age))
+    }
+}
+
+
+class Person(name:String, mail:String, age:Int) {
+    var name:String = name
+    var mail:String = mail
+    var age:Int = age
+
+
+    fun to_s(): Any? = "$name ($mail, $age)"
+}
+
+
+
+
+リスト3-3
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val myViewModel:MyViewModel = ViewModelProvider(this)
+            .get(MyViewModel::class.java)
+        setContentView(R.layout.activity_main)
+
+
+        text1.text = updateData(myViewModel)
+        button1.setOnClickListener {}
+    }
+
+
+    fun updateData(vm:MyViewModel):String {
+        val data = vm.getAll()
+        var people = ""
+        for(item in data) {
+            people += item.to_s()
+            people += "\n"
+        }
+        return people
+    }
+}
+
+
+
+
+リスト3-4
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+
+    <EditText
+        android:id="@+id/frm_name"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        android:hint="name" />
+
+
+    <EditText
+        android:id="@+id/frm_mail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/frm_name"
+        android:hint="mail" />
+
+
+    <EditText
+        android:id="@+id/frm_age"
+        android:inputType="text|number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/frm_mail"
+        android:hint="age" />
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Button"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/frm_age"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+リスト3-5
+button1.setOnClickListener {
+    val nm =frm_name.text
+    val ml = frm_mail.text
+    val ag = frm_age.text
+    myViewModel.add(nm.toString(), ml.toString(), ag.toString().toInt())
+    text1.text = updateData(myViewModel)
+}
+
+
+
+
+リスト3-6
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+    private val data:MutableList<Person> = mutableListOf(
+        Person("Taro", "taro@yamada", 36),
+        Person("Hanako", "hanako@flower", 25),
+        Person("Sachiko", "sachiko@happy", 14)
+    )
+
+
+    fun to_s(ob:Person): Any? = "$ob.name ($ob.mail, $ob.age)"
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        text1.text = updateData()
+        button1.setOnClickListener {
+            val nm = frm_name.text
+            val ml = frm_mail.text
+            val ag = frm_age.text
+            data.add(Person(nm.toString(), ml.toString(), ag.toString().toInt()))
+            text1.text = updateData()
+        }
+    }
+
+
+    fun updateData():String {
+        var people = ""
+        for(item in data) {
+            people += item.to_s()
+            people += "\n"
+        }
+        return people
+    }
+}
+
+
+
+
+リスト3-8
+buildFeatures {
+    dataBinding = true
+}
+
+
+
+
+リスト3-9
+package com.example.myfirstapp
+
+
+import androidx.lifecycle.ViewModel
+
+
+class MyViewModel : ViewModel(){
+    var data:MutableList<Person> = mutableListOf(
+        Person("Taro", "taro@yamada", 36),
+        Person("Hanako", "hanako@flower", 25),
+        Person("Sachiko", "sachiko@happy", 14)
+    )
+        get() = field
+
+
+    var person:Person = Person("new user", "new@address", 0)
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
+    var allText:String = ""
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
+    fun allByText(): String {
+        var res = ""
+        for (item in data) {
+            res += item.to_s()
+            res += "\n"
+        }
+        return res
+    }
+
+
+    fun getById(id:Int):Person = data[id]
+
+
+    fun add(name:String, mail:String, age:Int) {
+       data.add(Person(name, mail, age))
+    }
+
+
+    init {
+        allText = allByText()
+    }
+}
+
+
+class Person(name:String, mail:String, age:Int) {
+    var name:String = name
+    var mail:String = mail
+    var age:Int = age
+
+
+    fun age_s():String = age.toString()
+
+
+    fun to_s(): Any? = "$name ($mail, $age)"
+}
+
+
+
+
+リスト3-10
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.myfirstapp.MyViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:text="@{viewmodel.allText}"
+            ……略…… />
+
+
+        <EditText
+            android:id="@+id/frm_name"
+            android:inputType="text"
+            android:text="@{viewmodel.person.name}"
+            ……略…… />
+        <EditText
+            android:id="@+id/frm_mail"
+            android:inputType="textEmailAddress"
+            android:text="@{viewmodel.person.mail}"
+            ……略…… />
+        <EditText
+            android:id="@+id/frm_age"
+            android:inputType="text|number"
+            android:text="@{viewmodel.person.age_s}"
+            ……略…… />
+
+
+        <Button
+            android:id="@+id/button1"
+            ……略…… />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト3-11
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.myfirstapp.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
+            this, R.layout.activity_main)
+
+
+        val myViewModel:MyViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        binding.viewmodel = myViewModel
+        binding.text1.text = myViewModel.allText
+
+
+        button1.setOnClickListener {
+            val nm = binding.frmName.text
+            val ml = binding.frmMail.text
+            val ag = binding.frmAge.text
+            myViewModel.add(nm.toString(), ml.toString(), ag.toString().toInt())
+            myViewModel.person = Person(nm.toString(), ml.toString(), ag.toString().toInt())
+            myViewModel.allText = myViewModel.allByText()
+            binding.text1.text = myViewModel.allText
+        }
+    }
+}
+
+
+
+
+リスト3-12
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.myfirstapp.MyViewModel" />
+        <variable
+            name="person"
+            type="com.example.myfirstapp.Person" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.allText}"
+            ……略…… />
+
+
+        <EditText
+            android:id="@+id/frm_name"
+            android:inputType="text"
+            android:text="@{person.name}"
+            ……略…… />
+        <EditText
+            android:id="@+id/frm_mail"
+            android:inputType="textEmailAddress"
+            android:text="@{person.mail}"
+            ……略…… />
+        <EditText
+            android:id="@+id/frm_age"
+            android:inputType="text|number"
+            android:text="@{person.age}"
+            ……略…… />
+
+
+        <Button
+            android:id="@+id/button1"
+            ……略…… />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト3-13
+package com.example.myfirstapp
+
+
+import androidx.databinding.ObservableArrayList
+import androidx.databinding.ObservableField
+import androidx.lifecycle.ViewModel
+
+
+class MyViewModel : ViewModel(){
+    val data = ObservableArrayList<Person>().apply {
+        add(Person("Taro", "taro@yamada", 36))
+        add(Person("Hanako", "hanako@flower", 25))
+        add(Person("Sachiko", "sachiko@happy", 14))
+    }
+
+
+    val person = ObservableField<Person>()
+
+
+    var allText = ObservableField<String>()
+
+
+    fun allbyText():String {
+            var res = String()
+            for(item in data) {
+                res += item.to_s()
+                res += "\n"
+            }
+            return res
+        }
+
+
+    fun getById(id:Int):Person = data[id]
+
+
+    fun add(nm:String, ml:String, ag:Int) {
+        this.add(Person(nm, ml, ag))
+    }
+    fun add(person:Person) {
+        data.add(person)
+    }
+
+
+    init {
+        allText.set((allbyText()))
+        person.set(Person("", "", 0))
+    }
+
+
+}
+
+
+class Person(name:String, mail:String, age:Int) {
+    var name = ObservableField<String>()
+    var mail = ObservableField<String>()
+    var age = ObservableField<String>()
+
+
+    init {
+        this.name.set(name)
+        this.mail.set(mail)
+        this.age.set(age.toString())
+    }
+
+
+    fun to_s(): String = "${name.get()} (${mail.get()}, ${age.get()})"
+}
+
+
+
+
+リスト3-14
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.myfirstapp.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
+            this, R.layout.activity_main)
+
+
+        val myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        binding.viewmodel = myViewModel
+        binding.person = myViewModel.person.get()
+
+
+        button1.setOnClickListener {
+            myViewModel.add(
+                frm_name.text.toString(),
+                frm_mail.text.toString(),
+                frm_age.text.toString().toInt()
+            )
+            myViewModel.person!!.get()!!.name.set("name")
+            myViewModel.person!!.get()!!.mail.set("mail@address")
+            myViewModel.person!!.get()!!.age.set("0")
+            myViewModel.allText.set(myViewModel.allbyText())
+        }
+    }
+}
+
+
+
+
+リスト3-15
+package com.example.myfirstapp
+
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+
+class MyViewModel : ViewModel(){
+    val data: MutableLiveData<MutableList<Person>> by lazy {
+        MutableLiveData<MutableList<Person>>()
+    }
+
+
+    val name:MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+
+
+    val mail:MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+    val age:MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+
+
+    val allText:MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+
+
+    fun allByText(): String {
+        var res = String()
+        for (item in data.value!!) {
+            res += item.to_s()
+            res += "\n"
+        }
+        return res
+    }
+
+
+    fun getById(id:Int):Person = data.value!!.get(id)
+
+
+    fun add(nm:String, ml:String, ag:Int) {
+        data.value?.add(Person(nm, ml, ag))
+    }
+
+
+    init {
+        data.value = mutableListOf(
+            Person("Taro", "taro@yamada", 36),
+            Person("Hanako", "hanako@flower", 25),
+            Person("Sachiko", "sachiko@happy", 14)
+        )
+        allText.value = allByText()
+        name.value = "name"
+        mail.value = "mail@address"
+        age.value = "0"
+    }
+}
+
+
+class Person(name:String, mail:String, age:Int) {
+    var name:String = name
+    var mail:String = mail
+    var age:Int = age
+
+
+    fun age_s():String = age.toString()
+
+
+    fun to_s(): Any? = "$name ($mail, $age)"
+}
+
+
+
+
+リスト3-16
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.myfirstapp.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
+            this, R.layout.activity_main)
+
+
+        val myViewModel:MyViewModel = ViewModelProvider(this)
+                .get(MyViewModel::class.java)
+
+
+        val nameObserver = Observer<String> { newName ->
+            frm_name.setText(newName, TextView.BufferType.NORMAL)
+        }
+        myViewModel.name.observe(this, nameObserver)
+
+
+        val mailObserver = Observer<String> { newMail ->
+            frm_mail.setText(newMail, TextView.BufferType.NORMAL)
+        }
+        myViewModel.mail.observe(this, mailObserver)
+
+
+        val ageObserver = Observer<String> { newAge ->
+            frm_age.setText(newAge, TextView.BufferType.NORMAL)
+        }
+        myViewModel.age.observe(this, ageObserver)
+
+
+        val allObserver = Observer<String> { newAll ->
+            text1.setText(newAll, TextView.BufferType.NORMAL)
+        }
+        myViewModel.allText.observe(this, allObserver)
+
+
+        button1.setOnClickListener {
+            myViewModel.add(
+                frm_name.text.toString(),
+                frm_mail.text.toString(),
+                frm_age.text.toString().toInt()
+            )
+            myViewModel.name.value = ""
+            myViewModel.mail.value = ""
+            myViewModel.age.value = "0"
+            myViewModel.allText.value = myViewModel.allByText()
+        }
+    }
+}
+
+
+
+
+リスト3-17
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="v_name"
+            type="String" />
+        <variable
+            name="v_pass"
+            type="String" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        ……略……>
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{v_name.equals(v_pass) ? "Change Password!" : "OK!!"}'
+            ……略…… />
+
+
+        <EditText
+            android:id="@+id/frm_name"
+            android:inputType="text"
+            android:text="@{v_name}"
+            ……略…… />
+        <EditText
+            android:id="@+id/frm_pass"
+            android:inputType="textPassword"
+            android:text="@{v_pass}"
+            ……略…… />
+
+
+        <Button
+            android:id="@+id/button1"
+            ……略…… />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト3-18
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
+            this, R.layout.activity_main)
+        binding.vName = ""
+        binding.vPass = ""
+
+
+        button1.setOnClickListener {
+            binding.vName = frm_name.text.toString()
+            binding.vPass = frm_pass.text.toString()
+        }
+    }
+}
+
+
+
+
+リスト3-19
+// import android.widget.EditText
+// import android.widget.TextView を追加
+
+
+class LayoutObject {
+
+
+    fun doIt(edit: EditText, vw: TextView) {
+        val num = edit.text.toString().toInt()
+        var total = 0
+        for(n in 1..num) {
+            total += n
+        }
+        vw.text = "Total: $total."
+    }
+}
+
+
+
+
+リスト3-20
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <import type="com.example.myfirstapp.LayoutObject" />
+        <variable
+            name="obj"
+            type="LayoutObject" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        ……略……>
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="input number..."
+            ……略…… />
+
+
+        <EditText
+            android:id="@+id/frm_number"
+            android:inputType="text"
+            android:text="100"
+            ……略…… />
+
+
+        <Button
+            android:id="@+id/button1"
+            android:onClick="@{(vw)-> obj.doIt(frmNumber, text1)}"
+            ……略…… />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト3-21
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
+            this, R.layout.activity_main)
+        binding.obj = LayoutObject()
+    }
+}
+
+
+
+
+リスト3-22
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:text=""
+            ……略…… />
+
+
+        <Button
+            android:id="@+id/button1"
+            ……略…… />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト3-23
+package com.example.myfirstapp
+
+
+import androidx.lifecycle.ViewModel
+
+
+class MyViewModel : ViewModel() {
+    var data: MutableList<Person> = mutableListOf(
+        Person("Taro", "taro@yamada", 36),
+        Person("Hanako", "hanako@flower", 25),
+        Person("Sachiko", "sachiko@happy", 14)
+    )
+
+
+    fun allByText(): String {
+        var res = ""
+        for (item in data) {
+            res += item.to_s()
+            res += "\n"
+        }
+        return res
+    }
+
+
+    fun getById(id: Int): Person = data[id]
+
+
+    fun add(name: String, mail: String, age: Int) {
+        data.add(Person(name, mail, age))
+    }
+}
+
+
+class Person(name:String, mail:String, age:Int) {
+    var name:String = name
+    var mail:String = mail
+    var age:Int = age
+
+
+    fun age_s():String = age.toString()
+
+
+    fun to_s(): Any? = "$name ($mail, $age)"
+}
+
+
+
+
+リスト3-24
+package com.example.myfirstapp
+
+
+import android.content.DialogInterface
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val myViewModel:MyViewModel = ViewModelProvider(this)
+                .get(MyViewModel::class.java)
+        setContentView(R.layout.activity_main)
+
+
+        text1.text = myViewModel.allByText()
+        button1.setOnClickListener {
+
+
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Alert")
+                .setMessage("Add new person data?")
+                .setPositiveButton("OK",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        myViewModel.add("new name", "new@mail.address", 123)
+                        text1.text = myViewModel.allByText()
+                    })
+                .setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        Toast.makeText(this, "Canceled.",
+                            Toast.LENGTH_SHORT).show()
+                    })
+
+
+            builder.create().show()
+        }
+    }
+}
+
+
+
+
+リスト3-25
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/dlg_name"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="name" />
+
+
+    <EditText
+        android:id="@+id/dlg_mail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="mail" />
+
+
+    <EditText
+        android:id="@+id/dlg_age"
+        android:inputType="text|number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="age" />
+
+
+</LinearLayout>
+
+
+
+
+リスト3-26
+package com.example.myfirstapp
+
+
+import android.content.DialogInterface
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val myViewModel:MyViewModel = ViewModelProvider(this)
+            .get(MyViewModel::class.java)
+        setContentView(R.layout.activity_main)
+
+
+        text1.text = myViewModel.allByText()
+        button1.setOnClickListener {
+            val vw = layoutInflater.inflate(R.layout.mydialog, null)
+            val dlg_name = vw.findViewById<EditText>(R.id.dlg_name)
+            val dlg_mail = vw.findViewById<EditText>(R.id.dlg_mail)
+            val dlg_age = vw.findViewById<EditText>(R.id.dlg_age)
+
+
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Alert")
+            builder.setView(vw)
+                .setPositiveButton("OK",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        myViewModel.add(dlg_name.text.toString(),
+                            dlg_mail.text.toString(),
+                            dlg_age.text.toString().toInt())
+                        text1.text = myViewModel.allByText()
+                    })
+                .setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        Toast.makeText(this, "Canceled.",
+                            Toast.LENGTH_SHORT).show()
+                    })
+
+
+            builder.create().show()
+        }
+
+
+    }
+}
+
+
+
+
+リスト4-1
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" />
+
+
+
+
+リスト4-2
+package com.example.mysecondapp
+
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.mysecondapp.ui.main.MainFragment
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_activity)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, MainFragment.newInstance())
+                .commitNow()
+        }
+    }
+}
+
+
+
+
+リスト4-3
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MainFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+リスト4-4
+package com.example.mysecondapp.ui.main
+
+
+import androidx.lifecycle.ViewModelProviders
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.example.mysecondapp.R
+
+
+class MainFragment : Fragment() {
+
+
+    companion object {
+        fun newInstance() = MainFragment()
+    }
+
+
+    private lateinit var viewModel: MainViewModel
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.main_fragment, container, false)
+    }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        // TODO: Use the ViewModel
+    }
+
+
+}
+
+
+
+
+リスト4-5
+buildFeatures {
+    dataBinding = true
+}
+
+
+
+
+リスト4-6
+package com.example.mysecondapp.ui.main
+
+
+import androidx.lifecycle.ViewModel
+
+
+class MainViewModel : ViewModel() {
+    var message = "MainFragment!"
+}
+
+
+
+
+リスト4-7
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.mysecondapp.ui.main.MainViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainFragment">
+
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.message}"
+            android:textSize="24sp"
+            ……略…… />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト4-8
+package com.example.mysecondapp.ui.main
+
+
+import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import com.example.mysecondapp.R
+import com.example.mysecondapp.databinding.MainFragmentBinding
+
+
+class MainFragment : Fragment() {
+
+
+    companion object {
+        fun newInstance() = MainFragment()
+    }
+
+
+    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: MainFragmentBinding
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding =  DataBindingUtil.inflate(inflater,
+            R.layout.main_fragment, container, false)
+        binding.setLifecycleOwner(this)
+        return binding.getRoot()
+    }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this)
+                .get(MainViewModel::class.java)
+        binding.viewmodel = viewModel
+    }
+}
+
+
+
+
+リスト4-9
+package com.example.mysecondapp.ui.main
+
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+
+class MainViewModel : ViewModel() {
+
+
+    val message: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+    val message2:MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+    val count:MutableLiveData<Int> by lazy {
+        MutableLiveData<Int>()
+    }
+
+
+    val share_data:MutableLiveData<ShareData> by lazy {
+        MutableLiveData<ShareData>()
+    }
+
+
+    init {
+        message.value = "This is first message!!"
+        message2.value = "This is Second message."
+        count.value = 0
+        share_data.value = ShareData
+    }
+    fun count() {
+        count.value = count.value!! + 1
+    }
+}
+
+
+object ShareData {
+
+
+    val share_message:MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+    val share_count:MutableLiveData<Int> by lazy {
+        MutableLiveData<Int>()
+    }
+    init {
+        share_message.value = "Share message!"
+        share_count.value = 0
+    }
+    fun count() {
+        share_count.value = share_count.value!! + 1
+    }
+}
+
+
+
+
+リスト4-10――main_fragment.xml
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="1dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:background="#ddffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp"
+        tools:context=".ui.main.MainFragment">
+
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/sd_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/message" />
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="Main Button"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/sd_message"
+            tools:layout_editor_absoluteX="0dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
+
+
+
+
+リスト4-11――fragment_sub.xml
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="1dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:background="#aaffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp"
+        tools:context=".ui.main.SubFragment">
+
+
+        <TextView
+            android:id="@+id/message2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/sd_message2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/message2" />
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="Sub Button"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/sd_message2"
+            tools:layout_editor_absoluteX="0dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
+
+
+
+
+リスト4-12――MainFragment.kt
+package com.example.mysecondapp.ui.main
+
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.mysecondapp.R
+import com.example.mysecondapp.databinding.MainFragmentBinding
+import kotlinx.android.synthetic.main.main_fragment.*
+
+
+class MainFragment : Fragment() {
+
+
+    companion object {
+        fun newInstance() = MainFragment()
+    }
+
+
+    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: MainFragmentBinding
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.main_fragment, container, false)
+    }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        
+        val msgObserver = Observer<String> { newMsg ->
+            message.setText(newMsg, TextView.BufferType.NORMAL)
+        }
+        viewModel.message.observe(viewLifecycleOwner, msgObserver)
+
+
+        val sdMsgObserver = Observer<String> { newMsg ->
+            sd_message.setText(newMsg, TextView.BufferType.NORMAL)
+        }
+        viewModel.share_data.value!!.share_message
+                .observe(viewLifecycleOwner, sdMsgObserver)
+
+
+        button1.setOnClickListener {
+            viewModel.count()
+            viewModel.message.value = "<< CHANGE by 1st [${viewModel.count.value}]>>"
+            viewModel.share_data.value!!.count()
+            viewModel.share_data.value!!.share_message.value = 
+                "<< CHANGE by 1st [${viewModel.share_data.value!!.share_count.value}] >>"
+        }
+    }
+
+
+}
+
+
+
+
+リスト4-13――SubFragment.kt
+package com.example.mysecondapp.ui.main
+
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.mysecondapp.R
+import com.example.mysecondapp.databinding.FragmentSubBinding
+import kotlinx.android.synthetic.main.fragment_sub.*
+
+
+class SubFragment : Fragment() {
+
+
+    companion object {
+        fun newInstance() = SubFragment()
+    }
+
+
+    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: FragmentSubBinding
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.fragment_sub, container, false)
+    }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        
+        val msgObserver2 = Observer<String> { newMsg ->
+            message2.setText(newMsg, TextView.BufferType.NORMAL)
+        }
+        viewModel.message2.observe(viewLifecycleOwner, msgObserver2)
+
+
+        val sdMsgObserver2 = Observer<String> { newMsg ->
+            sd_message2.setText(newMsg, TextView.BufferType.NORMAL)
+        }
+        viewModel.share_data.value!!.share_message
+                .observe(viewLifecycleOwner, sdMsgObserver2)
+
+
+        button2.setOnClickListener {
+            viewModel.count()
+            viewModel.message2.value = "<< CHANGE by 2nd [${viewModel.count.value}]>>"
+            viewModel.share_data.value!!.count()
+            viewModel.share_data.value!!.share_message.value = 
+                "<< CHANGE by 2nd [${viewModel.share_data.value!!.share_count.value}] >>"
+        }
+    }
+}
+
+
+
+
+リスト4-14
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linear_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
+</FrameLayout>
+
+
+
+
+リスト4-15
+package com.example.mysecondapp
+
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.mysecondapp.ui.main.MainFragment
+import com.example.mysecondapp.ui.main.SubFragment
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_activity)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.linear_container, MainFragment.newInstance())
+                .add(R.id.linear_container, SubFragment.newInstance())
+                .commitNow()
+        }
+
+
+    }
+
+
+}
+
+
+
+
+リスト4-16
+class SubFragment : Fragment() {
+
+
+    companion object {
+
+
+        fun newInstance(param: String) =
+            SubFragment().apply {
+                arguments = Bundle().apply {
+                    putString("param", param)
+                }
+            }
+    }
+
+
+    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: FragmentSubBinding
+    private var param:String? = null
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param = it.getString("param")
+        }
+    }
+
+
+    override fun onCreateView ……変更ないため省略……
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel.message2.value = param
+
+
+        ……Observer関連の処理は略……
+
+
+        button2.setOnClickListener {
+            ……略……
+        }
+    }
+}
+
+
+
+
+リスト4-17
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.main_activity)
+    if (savedInstanceState == null) {
+        supportFragmentManager.beginTransaction()
+            .add(R.id.linear_container, MainFragment.newInstance())
+            .add(R.id.linear_container, SubFragment.newInstance(
+                   "This is Message from MainActivity."))
+            .commitNow()
+    }
+}
+
+
+
+
+リスト4-18
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+リスト4-19
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_dashboard" />
+
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications" />
+
+
+</menu>
+
+
+
+
+リスト4-20
+<?xml version="1.0" encoding="utf-8"?>
+<navigation 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.mythirdapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.mythirdapp.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.mythirdapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>
+
+
+
+
+リスト4-21
+<?xml version="1.0" encoding="utf-8"?>
+<navigation ……略……>
+
+
+    <fragment
+        android:id="@+id/navigation_home"
+        ……略…… >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        ……略…… >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        ……略…… >
+        <action
+            android:id="@+id/action_navigation_notifications_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
+
+
+
+
+リスト4-22
+<fragment
+    android:id="@+id/navigation_home"
+    ……略…… >
+    <action
+        android:id="@+id/action_navigation_home_to_navigation_dashboard"
+        app:destination="@id/navigation_dashboard" />
+    <action
+        android:id="@+id/action_navigation_home_to_navigation_notifications"
+        app:destination="@id/navigation_notifications" />
+</fragment>
+
+
+
+
+リスト4-23
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    ……略……>
+
+
+    <TextView
+        android:id="@+id/text_home"
+        ……略…… />
+
+
+    <Button
+        android:id="@+id/button_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+リスト4-24
+root.button_home.setOnClickListener { view ->
+    view.findNavController().navigate(
+        R.id.action_navigation_home_to_navigation_dashboard)
+}
+
+
+
+
+リスト4-25
+kotlinOptions {
+    jvmTarget = "1.8"
+}
+
+
+
+
+リスト4-26
+implementation 'androidx.fragment:fragment-ktx:1.2.0'
+
+
+
+
+リスト4-27
+package com.example.mythirdapp
+
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+
+class AppViewModel : ViewModel() {
+    val data = MutableLiveData<String>()
+}
+
+
+
+
+リスト4-28
+package com.example.mythirdapp.ui.home
+
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.example.mythirdapp.AppViewModel
+import com.example.mythirdapp.R
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
+
+
+class HomeFragment : Fragment() {
+
+
+    private lateinit var homeViewModel: HomeViewModel
+    val appViewModel: AppViewModel by activityViewModels() //●
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        homeViewModel = ViewModelProvider(this)
+            .get(HomeViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_home,
+            container, false)
+        homeViewModel.text.observe(this, Observer {
+            text_home.text = it
+        })
+        root.button_home.setOnClickListener { view ->
+            this.appViewModel.data.value = "This is HomeFragment-Data!!!"
+            view.findNavController().navigate(
+                R.id.action_navigation_home_to_navigation_dashboard)
+        }
+        return root
+    }
+}
+
+
+
+
+リスト4-29
+// import androidx.lifecycle.MutableLiveData 追加
+
+
+val text: MutableLiveData<String> = _text //●
+
+
+
+
+リスト4-30
+package com.example.mythirdapp.ui.dashboard
+
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.mythirdapp.AppViewModel
+import com.example.mythirdapp.R
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+
+
+class DashboardFragment : Fragment() {
+
+
+    private lateinit var dashboardViewModel: DashboardViewModel
+    val appViewModel: AppViewModel by activityViewModels() //●
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        dashboardViewModel = ViewModelProvider(this)
+            .get(DashboardViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_dashboard,
+            container, false)
+        dashboardViewModel.text.observe(this, Observer {
+            text_dashboard.text = it
+        })
+        dashboardViewModel.text.value = "data:" + appViewModel.data.value
+        Toast.makeText(this.context, "data:" + appViewModel.data.value,
+            Toast.LENGTH_LONG).show()
+        return root
+    }
+}
+
+
+
+
+リスト4-31
+<fragment
+    android:id="@+id/navigation_home"
+    ……略…… >
+
+
+    <action
+        android:id="@+id/action_navigation_home_to_navigation_dashboard"
+        app:destination="@id/navigation_dashboard" />
+    <action
+        android:id="@+id/action_navigation_home_to_navigation_notifications"
+        app:destination="@id/navigation_notifications">
+    </action>
+
+
+    <argument
+        android:name="msg"
+        app:argType="string"
+        android:defaultValue="sample message." />
+</fragment>
+
+
+
+
+リスト4-32
+<action
+    android:id="@+id/action_navigation_home_to_navigation_notifications"
+    app:destination="@id/navigation_notifications">
+    <argument
+        android:name="msg"
+        app:argType="string"
+        android:defaultValue="sample message." />
+</action>
+
+
+
+
+リスト4-33
+root.button_home.setOnClickListener { view ->
+    view.findNavController().navigate(
+        R.id.action_navigation_home_to_navigation_notifications)
+}
+
+
+
+
+リスト4-34
+notificationsViewModel.text.value = arguments?.get("msg") as String?
+
+
+
+
+リスト4-35
+root.button_home.setOnClickListener { view ->
+    var bundle = bundleOf("msg" to "from Home with Love!")
+    view.findNavController().navigate(
+        R.id.action_navigation_home_to_navigation_notifications, bundle)
+}
+
+
+
+
+リスト4-36
+<action
+    android:id="@+id/action_navigation_home_to_navigation_notifications"
+    app:destination="@id/navigation_notifications"
+    app:enterAnim="@anim/fragment_open_enter"
+    app:exitAnim="@anim/fragment_close_exit">
+
+
+
+
+リスト4-37
+package com.example.mythirdapp
+
+
+import android.os.Bundle
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+
+
+        val navController = findNavController(R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+    }
+}
+
+
+
+
+リスト4-38
+package com.example.mythirdapp
+
+
+import android.os.Bundle
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+
+
+        val navController = findNavController(R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(navController.graph) //●
+
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+    }
+
+
+    override fun onSupportNavigateUp()
+        = findNavController(R.id.nav_host_fragment).navigateUp() //●
+}
+
+
+
+
+リスト5-1
+apply plugin: 'kotlin-kapt'
+
+
+
+
+リスト5-2
+def room_version = "2.2.3"
+implementation "androidx.room:room-runtime:$room_version"
+kapt "androidx.room:room-compiler:$room_version"
+implementation "androidx.room:room-ktx:$room_version"
+implementation "androidx.room:room-rxjava2:$room_version"
+implementation "androidx.room:room-guava:$room_version"
+testImplementation "androidx.room:room-testing:$room_version"
+
+
+
+
+リスト5-3
+// import androidx.room.Entity
+// import androidx.room.PrimaryKey 以上を追加
+
+
+@Entity
+class Person(name:String, mail:String, age:Int) {
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+    var name: String = name
+    var mail: String = mail
+    var age: Int = age
+
+
+    fun age_s():String = age.toString()
+
+
+    fun to_s(): String = "$id: $name ($mail, $age)"
+}
+
+
+
+
+リスト5-4
+package com.example.myfirstapp
+
+
+import androidx.lifecycle.ViewModel
+
+
+class MyViewModel : ViewModel(){
+    var data:MutableList<Person> = mutableListOf(
+        Person("Taro", "taro@yamada", 36),
+        Person("Hanako", "hanako@flower", 25),
+        Person("Sachiko", "sachiko@happy", 14)
+    )
+        get() = field
+
+
+    var person:Person = Person("new user", "new@address", 0)
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
+    fun allByText(): String {
+        var res = ""
+        for (item in data) {
+            res += item.to_s()
+            res += "\n"
+        }
+        return res
+    }
+
+
+    fun getById(id:Int):Person = data[id]
+
+
+    fun add(name:String, mail:String, age:Int) {
+        data.add(Person( name, mail, age))
+    }
+}
+
+
+
+
+リスト5-5
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        ……略…… >
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:textSize="24sp"
+            ……略……  />
+
+
+        <EditText
+            android:id="@+id/frm_name"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ……略……  />
+        <EditText
+            android:id="@+id/frm_mail"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ……略……  />
+        <EditText
+            android:id="@+id/frm_age"
+            android:inputType="text|number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ……略……  />
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            ……略……  />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト5-6
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        val viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        text1.text = viewModel.allByText()
+
+
+        button1.setOnClickListener {
+            val nm = frm_name.text
+            val ml = frm_mail.text
+            val ag = frm_age.text
+            viewModel.add(nm.toString(), ml.toString(), ag.toString().toInt())
+            viewModel.person = Person(nm.toString(), ml.toString(), ag.toString().toInt())
+            text1.text = viewModel.allByText()
+        }
+    }
+}
+
+
+
+
+リスト5-7
+// import androidx.room.* 追加
+
+
+@Dao
+interface PersonDao {
+
+
+    @Query("SELECT * FROM person")
+    fun loadAllPeople(): Array<Person>
+
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun inserPerson(person: Person)
+
+
+}
+
+
+
+
+リスト5-8
+// import androidx.room.* 追加
+
+
+@Database(entities = arrayOf(Person::class), version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun personDao(): PersonDao
+}
+
+
+
+
+リスト5-9
+// import androidx.room.Room 追加
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "myfirstapp_db"
+        ).allowMainThreadQueries().build()
+        text1.text = getByText(db.personDao().loadAllPeople())
+
+
+        button1.setOnClickListener {
+           val person = Person(
+               frm_name.text.toString(),
+               frm_mail.text.toString(),
+               frm_age.text.toString().toInt())
+            db.personDao().inserPerson(person)
+            text1.text = getByText(db.personDao().loadAllPeople())
+            frm_name.setText("")
+            frm_mail.setText("")
+            frm_age.setText("0")
+        }
+    }
+
+
+    fun getByText(data: Array<Person>):String {
+        var res = ""
+        for(item in data) {
+            res += item.to_s()
+            res += "\n"
+        }
+        return res
+    }
+}
+
+
+
+
+リスト5-10
+@Query("SELECT * FROM person WHERE id = :id")
+fun getPersonById(id:Int): Person
+
+
+@Update
+fun updatePerson(person:Person)
+
+
+
+
+リスト5-11
+<EditText
+    android:id="@+id/frm_id"
+    android:inputType="number"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    ……略…… />
+
+
+
+
+リスト5-12
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "myfirstapp_db"
+        ).allowMainThreadQueries().build()
+        text1.text = getByText(db.personDao().loadAllPeople())
+
+
+        frm_id.setOnFocusChangeListener { view: View, b: Boolean ->
+            if (!b){
+                val id = frm_id.text.toString().toInt()
+                val person = db.personDao().getPersonById(id)
+                frm_name.setText(person?.name)
+                frm_mail.setText(person?.mail)
+                frm_age.setText(person?.age_s())
+            }
+        }
+
+
+        button1.setOnClickListener {
+            val id = frm_id.text.toString().toInt()
+            val person = db.personDao().getPersonById(id)
+            person.name = frm_name.text.toString()
+            person.mail = frm_mail.text.toString()
+            person.age = frm_age.text.toString().toInt()
+            db.personDao().updatePerson(person)
+            text1.text = getByText(db.personDao().loadAllPeople())
+            frm_name.setText("")
+            frm_mail.setText("")
+            frm_age.setText("0")
+        }
+    }
+
+
+    fun getByText(data: Array<Person>):String {……略……}
+}
+
+
+
+
+リスト5-13
+@Delete
+fun deletePerson(person:Person)
+
+
+ 削除のメソッドには、「@Delete」というアノテーションを付けます。これでこのメソッド
+リスト5-14
+button1.setOnClickListener {
+    val id = frm_id.text.toString().toInt()
+    val person = db.personDao().getPersonById(id)
+    db.personDao().deletePerson(person)
+    text1.text = getByText(db.personDao().loadAllPeople())
+    frm_id.setText("0")
+    frm_name.setText("")
+    frm_mail.setText("")
+    frm_age.setText("0")
+}
+
+
+
+
+リスト5-15
+// nameと等しいエンティティを検索
+@Query("SELECT * FROM person WHERE name = :name")
+fun getPersonByName(name:String): Array<Person>
+
+
+// nameを含むエンティティを検索
+@Query("SELECT * FROM person WHERE name like :name")
+fun getPersonLikeName(name:String): Array<Person>
+
+
+// ageと等しいか大きいエンティティを検索
+@Query("SELECT * FROM person WHERE age >= :age")
+fun getPersonGreaterThanAge(age:Int): Array<Person>
+
+
+// ageと等しいか小さいエンティティを検索
+@Query("SELECT * FROM person WHERE age <= :age")
+fun getPersonLowerThanAge(age:Int): Array<Person>
+
+
+// ageがmin以上max以下のエンティティを検索
+@Query("SELECT * FROM person WHERE age >= :min AND age <= :max")
+fun getPersonMinMaxFromAge(min:Int, max:Int): Array<Person>
+
+
+
+
+リスト5-16
+button1.setOnClickListener {
+    val name = frm_name.text.toString()
+    val people = db.personDao().getPersonLikeName(name)
+    text1.text = getByText(people)
+}
+
+
+
+
+リスト5-17
+// import androidx.sqlite.db.SupportSQLiteQuery 追加
+
+
+@RawQuery
+fun getPersonWithQuery(query: SupportSQLiteQuery):Array<Person>
+
+
+
+
+リスト5-18
+// import androidx.sqlite.db.SimpleSQLiteQuery
+// import kotlinx.android.synthetic.main.activity_main.* 追加
+
+
+button1.setOnClickListener {
+    val nm = "'%" + frm_name.text.toString() + "%'"
+    val query = SimpleSQLiteQuery(
+        "select * from person where mail like $nm")
+    val people = db.personDao().getPersonWithQuery(query)
+    text1.text = getByText(people)
+}
+
+
+
+
+リスト5-19
+// import androidx.room.* 追加
+
+
+data class PersonTuple(
+    @ColumnInfo(name = "name") val name: String?,
+    @ColumnInfo(name = "age") val age: Int?
+)
+
+
+
+
+リスト5-20
+@Query("SELECT * FROM person WHERE name like :name OR mail like :name")
+fun getPersonSubset(name:String): Array<PersonTuple>
+
+
+
+
+リスト5-21
+button1.setOnClickListener {
+    val nm = "%" + frm_name.text.toString() + "%"
+    val people = db.personDao().getPersonSubset(nm)
+    var res = ""
+    for(item in people) {
+        res += item.toString() + "\n"
+    }
+    text1.setText(res)
+}
+
+
+
+
+リスト5-22
+// import android.widget.EditText
+// import androidx.lifecycle.ViewModel 追加
+
+
+class MyViewModel(dao:PersonDao) : ViewModel(){
+
+
+    val dao = dao
+
+
+    var person:Person = Person("","",0)
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
+    fun data() :Array<Person> = dao.loadAllPeople()
+
+
+    fun add(name:EditText, mail:EditText, age:EditText) {
+        val nm = name.text.toString()
+        val ml = mail.text.toString()
+        val ag = age.text.toString().toInt()
+        add(nm, ml, ag)
+        name.setText("")
+        mail.setText("")
+        age.setText("0")
+    }
+
+
+    fun add(name:String, mail:String, age:Int) {
+        val p = Person(name, mail, age)
+        dao.inserPerson(p)
+    }
+
+
+    fun allByText(): String {
+        val data = data().iterator()
+        var res = ""
+        for (item in data) {
+            res += "${item.to_s()}\n"
+        }
+        return res
+    }
+}
+
+
+
+
+リスト5-23
+// import androidx.room.*
+// import androidx.lifecycle.ViewModel
+// import androidx.lifecycle.ViewModelProvider 追加
+
+
+class MyViewModelFactory(private val dataSource: PersonDao)
+        : ViewModelProvider.Factory {
+
+
+    override fun <T : ViewModel> create(model: Class<T>): T {
+        if (model.isAssignableFrom(MyViewModel::class.java)) {
+            return MyViewModel(dataSource) as T
+        }
+        throw IllegalArgumentException("CANNOT_GET_VIEWMODEL")
+    }
+}
+
+
+
+
+リスト5-24
+// import androidx.room.*
+// import android.content.Context 追加
+
+
+@Database(entities = arrayOf(Person::class), version = 1)
+abstract class AppDatabase : RoomDatabase() {
+
+
+    abstract fun personDao(): PersonDao
+
+
+    companion object {
+        @Volatile private var singleton: AppDatabase? = null
+
+
+        fun getInstance(context: Context): AppDatabase =
+            singleton ?: synchronized(this) {
+                singleton ?: buildDatabase(context)
+                    .also { singleton = it }
+            }
+
+
+        private fun buildDatabase(context: Context) =
+            Room.databaseBuilder(context.applicationContext,
+                AppDatabase::class.java, "myfirstapp_db")
+                .allowMainThreadQueries()
+                .build()
+    }
+}
+
+
+
+
+リスト5-25
+// import android.os.Bundle
+// import androidx.appcompat.app.AppCompatActivity
+// import kotlinx.android.synthetic.main.activity_main.* 追加
+
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var viewModel: MyViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val db = AppDatabase.getInstance(this)
+
+
+        viewModel = MyViewModelFactory(db.personDao())
+            .create(MyViewModel::class.java)
+
+
+        text1.text = viewModel.allByText()
+
+
+        button1.setOnClickListener {
+            viewModel.add(frm_name, frm_mail, frm_age)
+            text1.text = viewModel.allByText()
+        }
+    }
+}
+
+
+
+
+リスト5-26
+// import io.reactivex.Flowable 追加
+
+
+@Query("SELECT * FROM person")
+fun loadAllPeopleFlowable(): Flowable<Array<Person>>
+
+
+
+
+リスト5-27
+// import io.reactivex.schedulers.Schedulers 追加
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val db = AppDatabase.getInstance(this)
+
+
+        db.personDao().loadAllPeopleFlowable()
+            .subscribeOn(Schedulers.io())
+            .subscribe {
+                runOnUiThread {
+                    text1.text = getByText(it)
+                }
+            }
+
+
+        frm_id.setOnFocusChangeListener { view: View, b: Boolean ->
+            if (!b){
+                val id = frm_id.text.toString().toInt()
+                val person = db.personDao().getPersonById(id)
+                frm_name.setText(person?.name)
+                frm_mail.setText(person?.mail)
+                frm_age.setText(person?.age_s())
+            }
+        }
+
+
+        button1.setOnClickListener {
+            val id = frm_id.text.toString().toInt()
+            val person = db.personDao().getPersonById(id)
+            person.name = frm_name.text.toString()
+            person.mail = frm_mail.text.toString()
+            person.age = frm_age.text.toString().toInt()
+            db.personDao().updatePerson(person)
+        }
+    }
+
+
+    fun getByText(data: Array<Person>):String {
+        var res = ""
+        for(item in data) {
+            res += item.id.toString() + ": " + item.name + 
+                    "(" + item.age + ") [" + item.mail +"]\n"
+        }
+        return res
+    }
+}
+
+
+
+
+リスト5-28
+import android.content.Context
+import android.widget.EditText
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.room.*
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
+
+
+
+
+リスト5-29
+@Entity
+class Person(name:String, mail:String, age:Int) {
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+    var name: String = name
+    var mail: String = mail
+    var age: Int = age
+
+
+    fun age_s():String = age.toString()
+    fun to_s(): String = "$id: $name ($mail, $age)"
+}
+
+
+@Entity
+class Memo(content:String, person_id:Int) {
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+    var content: String = content
+    var person_id: Int = person_id
+    
+    fun to_s(): String = "$id: $content ($person_id)"
+}
+
+
+
+
+リスト5-30
+val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("CREATE TABLE Memo (id INTEGER not null, content TEXT not null, person_id INTEGER not null, PRIMARY KEY(id))")
+    }
+}
+
+
+
+
+リスト5-31
+@Database(entities = arrayOf(Person::class, Memo::class), version = 2)
+abstract class AppDatabase : RoomDatabase() {
+
+
+    abstract fun personDao(): PersonDao
+    abstract fun memoDao(): MemoDao
+
+
+    companion object {
+        @Volatile private var singleton: AppDatabase? = null
+
+
+        fun getInstance(context: Context): AppDatabase =
+            singleton ?: synchronized(this) {
+                singleton ?: buildDatabase(context)
+                    .also { singleton = it }
+            }
+
+
+        private fun buildDatabase(context: Context) =
+            Room.databaseBuilder(context.applicationContext,
+                AppDatabase::class.java, "myfirstapp_db")
+                .addMigrations(MIGRATION_1_2) // ●
+                .allowMainThreadQueries()
+                .build()
+    }
+}
+
+
+
+
+リスト5-32
+data class PersonWithMemo(
+    @Embedded val person: Person,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "person_id"
+    )
+    val memo:List<Memo>
+)
+
+
+data class MemoWithPerson(
+    @Embedded val memo: Memo,
+    @Relation(
+        parentColumn = "person_id",
+        entityColumn = "id"
+    )
+    val person:Person
+)
+
+
+
+
+リスト5-33
+@Dao
+interface PersonDao {
+    @Query("SELECT * FROM person")
+    fun loadAllPeople(): Array<Person>
+
+
+    @Query("SELECT * FROM person")
+    fun loadAllPersonWithMemo(): List<PersonWithMemo>
+
+
+    @Query("SELECT * FROM person WHERE id = :id")
+    fun getPersonById(id:Int): Person
+
+
+    @Query("SELECT * FROM person WHERE id = :id")
+    fun getPersonWithMemoById(id:Int): PersonWithMemo
+
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun inserPerson(person: Person)
+}
+
+
+@Dao
+interface MemoDao {
+    @Query("SELECT * FROM memo")
+    fun loadAllMemo(): Array<Memo>
+
+
+    @Query("SELECT * FROM memo")
+    fun loadAllMemoWithPerson(): List<MemoWithPerson>
+
+
+    @Query("SELECT * FROM memo WHERE id = :id")
+    fun getMemoById(id:Int): Memo
+
+
+    @Query("SELECT * FROM memo WHERE id = :id")
+    fun getMemoWithPersonById(id:Int): MemoWithPerson
+
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun inserMemo(memo: Memo)
+}
+
+
+
+
+リスト5-34
+class MyViewModelFactory(private val dataSource: PersonDao,
+                         private val dataSource2:MemoDao)
+    : ViewModelProvider.Factory {
+
+
+    override fun <T : ViewModel> create(model: Class<T>): T {
+        if (model.isAssignableFrom(MyViewModel::class.java)) {
+            return MyViewModel(dataSource, dataSource2) as T
+        }
+        throw IllegalArgumentException("CANNOT_GET_VIEWMODEL")
+    }
+}
+
+
+
+
+リスト5-35
+class MyViewModel(dao:PersonDao, mdao:MemoDao) 
+        : ViewModel(){
+
+
+    val pdao = dao
+    val mdao = mdao
+
+
+    fun people() :List<PersonWithMemo> = 
+            pdao.loadAllPersonWithMemo()
+    fun memo() :List<MemoWithPerson> = 
+            mdao.loadAllMemoWithPerson()
+
+
+    fun addMemo(content:EditText, id:EditText) {
+        val id = id.text.toString().toInt()
+        val content = content.text.toString()
+        addMemo(content, id)
+    }
+
+
+    fun addMemo(content:String, person_id:Int) {
+        val memo = Memo(content, person_id)
+        mdao.inserMemo(memo)
+    }
+
+
+    fun addPerson(name:EditText, mail:EditText, age:EditText) {
+        val nm = name.text.toString()
+        val ml = mail.text.toString()
+        val ag = age.text.toString().toInt()
+    }
+
+
+    fun addPerson(name:String, mail:String, age:Int) {
+        val p = Person(name, mail, age)
+        pdao.inserPerson(p)
+    }
+
+
+    fun getPersonWithMemoByText(id:Int): String {
+        val result = pdao.getPersonWithMemoById(id)
+        var res = "[${result.person.name}]\n"
+        for (item in result.memo.iterator()) {
+            res += "* ${item.content}\n"
+        }
+        return res
+    }
+
+
+    fun getMemoWithPersonByText(id:Int): String {
+        val result = mdao.getMemoWithPersonById(id)
+        return "* ${result.memo.content} (${result.person.name})"
+    }
+
+
+    fun allPersonWithMemoByText(): String {
+        val data = people().iterator()
+        var res = ""
+        for (item in data) {
+            if (item.memo.count() > 0) {
+                res += "[${item.person.name}]\n"
+                for (memo in item.memo.iterator()) {
+                    res += "* ${memo.content}\n"
+                }
+                res += "\n"
+            }
+        }
+        return res
+    }
+
+
+    fun allMemoWithPersonByText(): String {
+        val data = memo().iterator()
+        var res = ""
+        for (item in data) {
+            res += "* ${item.memo.content} (${item.person.name})\n"
+        }
+        return res
+    }
+}
+
+
+
+
+リスト5-36
+package com.example.myfirstapp
+
+
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var viewModel: MyViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        val db = AppDatabase.getInstance(this)
+
+
+        viewModel = MyViewModelFactory(db.personDao(), db.memoDao())
+            .create(MyViewModel::class.java)
+
+
+        text1.text = viewModel.allMemoWithPersonByText()
+
+
+        frm_id.setOnFocusChangeListener { view: View, b: Boolean ->
+            if (!b){
+                val id = frm_id.text.toString().toInt()
+                text1.setText(viewModel.getPersonWithMemoByText(id))
+            }
+        }
+
+
+        button1.setOnClickListener {
+            val person_id = frm_id.text.toString().toInt()
+            val memo = Memo(frm_name.text.toString(), person_id)
+            db.memoDao().inserMemo(memo)
+            text1.text = viewModel.allMemoWithPersonByText()
+        }
+    }
+}
+
+
+
+
+リスト6-1
+compileOptions {
+    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+
+
+
+リスト6-2
+def retrofit_version = "2.7.1"
+implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+implementation "com.google.code.gson:gson:2.8.6"
+
+
+
+
+リスト6-3
+<uses-permission android:name="android.permission.INTERNET" />
+
+
+
+
+リスト6-4
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ……略…… />
+
+
+    <EditText
+        android:id="@+id/frm_id"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ……略…… />
+
+
+    <EditText
+        android:id="@+id/frm_name"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ……略…… />
+
+
+    <EditText
+        android:id="@+id/frm_mail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ……略…… />
+
+
+    <EditText
+        android:id="@+id/frm_age"
+        android:inputType="text|number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ……略…… />
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       ……略…… />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+
+
+リスト6-5
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.*
+
+
+
+
+リスト6-6
+class User(var name: String, var mail:String, var tel:String) {
+    fun to_s() :String = "${name} [${mail}, ${tel}]"
+}
+
+
+
+
+リスト6-7
+interface RetrofitApi {
+    @GET("/mydata.json")
+    fun getUsers(): Call<MutableList<User>>?
+
+
+    @GET("/mydata/{id}.json")
+    fun getUser(@Path("id") id:Int): Call<User>?
+}
+
+
+
+
+リスト6-8
+// import android.util.Log
+// import androidx.lifecycle.MutableLiveData 追記
+
+
+class MyViewModel()
+    : ViewModel(){
+
+
+    val fireDatum: MutableLiveData<User> by lazy {
+        MutableLiveData<User>()
+    }
+    val fireData: MutableLiveData<MutableList<User>> by lazy {
+        MutableLiveData<MutableList<User>>()
+    }
+
+
+    val retrofit = Retrofit.Builder()
+        .baseUrl("https://tuyano-dummy-data.firebaseio.com")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+
+    val api: RetrofitApi = retrofit.create<RetrofitApi>(RetrofitApi::class.java)
+
+
+    fun getUserByRetrofit(id:Int = 0) {
+        val call = api.getUser(id) as Call<User>
+        call.enqueue(object : Callback<User> {
+            override fun onResponse(
+                call: Call<User>,
+                response: Response<User>
+            ) {
+                fireDatum.value = response.body()
+            }
+
+
+            override fun onFailure(
+                call: Call<User>?,
+                t: Throwable?
+            ) {
+                Log.d("ERR", t?.message)
+            }
+        })
+    }
+
+
+    fun getUsersByRetrofit() {
+        val call = api.getUsers() as Call<MutableList<User>>
+        call.enqueue(object : Callback<MutableList<User>> {
+            override fun onResponse(
+                call: Call<MutableList<User>>,
+                response: Response<MutableList<User>>
+            ) {
+                fireData.value = response.body()
+            }
+
+
+            override fun onFailure(
+                call: Call<MutableList<User>>,
+                t: Throwable?
+            ) {
+                Log.d("ERR", t?.message)
+            }
+        })
+    }
+
+
+    fun getFireDatumByText(data:User?):String {
+        if (data == null) {
+            return "no-data."
+        }
+        return data.to_s()
+    }
+
+
+    fun getFireDataByText(data:MutableList<User>?):String {
+        if (data == null || data.count() == 0) {
+            return "no-data."
+        }
+        var res = ""
+        for (item in data.iterator()) {
+            res += "${item.to_s()}\n"
+        }
+        return res
+    }
+
+
+}
+
+
+class MyViewModelFactory()
+    : ViewModelProvider.Factory {
+
+
+    override fun <T : ViewModel> create(model: Class<T>): T {
+        if (model.isAssignableFrom(MyViewModel::class.java)) {
+            return MyViewModel() as T
+        }
+        throw IllegalArgumentException("CANNOT_GET_VIEWMODEL")
+    }
+}
+
+
+
+
+リスト6-9
+// import androidx.lifecycle.Observer 追記
+class MainActivity : AppCompatActivity() {
+    private lateinit var viewModel: MyViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        viewModel = MyViewModelFactory()
+            .create(MyViewModel::class.java)
+
+
+        viewModel.fireDatum.observe(this,
+            Observer<User> { newDatum ->
+                frm_name.setText(
+                    viewModel.getFireDatumByText(newDatum))
+            })
+
+
+        viewModel.fireData.observe(this,
+            Observer<MutableList<User>> { newData ->
+                text1.text =viewModel.getFireDataByText(newData)
+            })
+
+
+        viewModel.getUsersByRetrofit()
+
+
+        button1.setOnClickListener {
+            val id_str = frm_id.text.toString()
+            if (id_str != "") {
+                viewModel.getUserByRetrofit(id_str.toInt())
+            }
+        }
+    }
+}
+
+
+
+
+リスト6-10
+fun addUserWithRetrofit(user:User) {
+    val call = api.addUser("0", user) as Call<User>
+    call.enqueue(object : Callback<User> {
+        override fun onResponse(
+            call: Call<User>,
+            response: Response<User>
+        ) {
+            fireDatum.value = response.body()
+            getUsersByRetrofit()
+        }
+
+
+        override fun onFailure(
+            call: Call<User>?,
+            t: Throwable?
+        ) {
+            Log.d("ERR", t?.message)
+        }
+    })
+}
+
+
+
+
+リスト6-11
+button1.setOnClickListener {
+    val name = frm_name.text.toString()
+    val mail:String = frm_mail.text.toString()
+    val tel:String =  frm_age.text.toString()
+    val user = User(name, mail, tel)
+    viewModel.addUserWithRetrofit(user)
+}
+
+
+
+
+リスト6-12
+<application
+    ……略…… >
+
+
+    <provider
+        android:name=".MySliceProvider"
+        android:authorities="com.example.myfirstapp"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+
+            <category android:name="android.app.slice.category.SLICE" />
+
+
+            <data
+                android:host="example.com"
+                android:pathPrefix="/"
+                android:scheme="http" />
+        </intent-filter>
+    </provider>
+
+
+    <activity android:name=".MainActivity">
+       ……略……
+    </activity>
+</application>
+
+
+
+
+リスト6-13
+override fun onBindSlice(sliceUri: Uri): Slice? {
+    val context = context ?: return null
+    val activityAction = createActivityAction() ?: return null
+    return if (sliceUri.path == "/") {
+        ListBuilder(context, sliceUri, ListBuilder.INFINITY)
+            .addRow(
+                ListBuilder.RowBuilder()
+                    .setTitle("URI found.")
+                    .setPrimaryAction(activityAction)
+            )
+            .build()
+    } else {
+        ListBuilder(context, sliceUri, ListBuilder.INFINITY)
+            .addRow(
+                ListBuilder.RowBuilder()
+                    .setTitle("URI not found.")
+                    .setPrimaryAction(activityAction)
+            )
+            .build()
+    }
+}
+
+
+
+
+リスト6-14
+private fun createActivityAction(): SliceAction? {
+    return null
+}
+
+
+
+
+リスト6-15
+// import android.app.PendingIntent
+// import androidx.core.graphics.drawable.IconCompat 追加
+
+
+private fun createActivityAction(): SliceAction? {
+    return SliceAction.create(
+        PendingIntent.getActivity(
+            context, 0, Intent(context, MainActivity::class.java), 0
+        ),
+        IconCompat.createWithResource(context, R.drawable.ic_launcher_foreground),
+        ListBuilder.ICON_IMAGE,
+        "Open App"
+    )
+}
+
+
+
+
+リスト6-16
+private fun createHomeIconAction(): SliceAction {
+    return SliceAction.create(
+        PendingIntent.getActivity(
+            context, 0, Intent(context, MainActivity::class.java), 0
+        ),
+        IconCompat.createWithResource(context, 
+                R.drawable.ic_home_black_24dp),
+        ListBuilder.ICON_IMAGE,
+        "Open App"
+    )
+}
+
+
+
+
+リスト6-17
+override fun onBindSlice(sliceUri: Uri): Slice? {
+    val context = context ?: return null
+    return ListBuilder(context, sliceUri, ListBuilder.INFINITY)
+        .addRow(
+            ListBuilder.RowBuilder()
+                .setTitle("URI found.")
+                .setPrimaryAction(createActivityAction()!!)
+                .setTitleItem(createHomeIconAction())
+        )
+        .build()
+}
+
+
+
+
+リスト6-18
+override fun onBindSlice(sliceUri: Uri): Slice? {
+    val context = context ?: return null
+    return ListBuilder(context, sliceUri, ListBuilder.INFINITY)
+        .setHeader(
+            ListBuilder.HeaderBuilder()
+                .setTitle("My First App")
+                .setSubtitle("This is sample slice.")
+        )
+        .addRow(
+            ListBuilder.RowBuilder()
+                .setTitle("URI found.")
+                .setPrimaryAction(createActivityAction()!!)
+                .setTitleItem(createHomeIconAction())
+        )
+        .addRange(
+            ListBuilder.RangeBuilder()
+                .setTitle("Value:")
+                .setMax(100)
+                .setValue(50)
+        )
+        .build()
+}
+
+
+
+
+リスト6-19
+// import androidx.slice.builders.GridRowBuilder 追加
+
+
+override fun onBindSlice(sliceUri: Uri): Slice? {
+    val context = context ?: return null
+    val actionIntent = PendingIntent.getActivity(
+        context, 0, Intent(context, MainActivity::class.java), 0
+    )
+    return ListBuilder(context, sliceUri, ListBuilder.INFINITY)
+        .setHeader(
+            ListBuilder.HeaderBuilder()
+                .setTitle("My First App")
+                .setSubtitle("This is sample slice.")
+                .setPrimaryAction(createActivityAction()!!)
+        )
+        .addGridRow(
+            GridRowBuilder()
+
+
+                .addCell(
+                    GridRowBuilder.CellBuilder()
+                        .addTitleText("First")
+                        .addImage(
+                            IconCompat.createWithResource(
+                                context, R.drawable.ic_home_black_24dp //●
+                            ), ListBuilder.SMALL_IMAGE)
+                        .setContentIntent(actionIntent)
+                )
+                .addCell(
+                    GridRowBuilder.CellBuilder()
+                        .addTitleText("Second")
+                        .addImage(
+                            IconCompat.createWithResource(
+                                context, R.drawable.ic_favorite_black_24dp //●
+                            ), ListBuilder.SMALL_IMAGE)
+                        .setContentIntent(actionIntent)
+                )
+                .addCell(
+                    GridRowBuilder.CellBuilder()
+                        .addTitleText("Third")
+                        .addImage(
+                            IconCompat.createWithResource(
+                                context, R.drawable.ic_info_black_24dp //●
+                            ), ListBuilder.SMALL_IMAGE)
+                        .setContentIntent(actionIntent)
+                )
+                .addCell(
+                    GridRowBuilder.CellBuilder()
+                        .addTitleText("Last")
+                        .addText("Text Grid!")
+                        .setContentIntent(actionIntent)
+                )
+        )
+        .build()
+}
+
+
+
+
+リスト6-20
+// import android.content.BroadcastReceiver 追加
+
+
+class CounterReceiver : BroadcastReceiver() {
+
+
+    companion object {
+        var value = 0
+        val INCREMENT = "INCREMENT"
+        val DECREMENT = "DECREMENT"
+        val sliceUri = Uri.parse("content://com.example.myfirstapp/")
+    }
+
+
+    override fun onReceive(context: Context?, intent: Intent?) {
+        if (intent?.action?.equals(INCREMENT) == true) {
+            // INCREMENT logic here..
+            value++
+            context?.contentResolver?.notifyChange(sliceUri, null)
+        }
+        if (intent?.action?.equals(DECREMENT) == true) {
+            // DECREMENT logic here..
+            value--
+            context?.contentResolver?.notifyChange(sliceUri, null)
+        }
+    }
+}
+
+
+
+
+リスト6-21
+override fun onBindSlice(sliceUri: Uri): Slice? {
+    val context = context ?: return null
+
+
+    val incrementIntent =
+            PendingIntent.getBroadcast(context, 0,
+        Intent(context, CounterReceiver::class.java)
+            .setAction(CounterReceiver.INCREMENT),
+        PendingIntent.FLAG_UPDATE_CURRENT)
+
+
+    val decrementIntent =
+            PendingIntent.getBroadcast(context, 0,
+        Intent(context, CounterReceiver::class.java)
+            .setAction(CounterReceiver.DECREMENT),
+        PendingIntent.FLAG_UPDATE_CURRENT)
+
+
+    val incrementAction = SliceAction.create(
+        incrementIntent,
+        IconCompat.createWithResource(context,
+            R.drawable.ic_add_circle_black_24dp), //●
+        ListBuilder.ICON_IMAGE, "Increment!")
+
+
+    val decrementAction = SliceAction.create(
+        decrementIntent, IconCompat.createWithResource(context,
+            R.drawable.ic_remove_circle_outline_black_24dp), //●
+        ListBuilder.ICON_IMAGE, "Decrement.")
+
+
+    return ListBuilder(context, sliceUri, ListBuilder.INFINITY)
+        .setHeader(
+            ListBuilder.HeaderBuilder()
+                .setTitle("My First App")
+                .setSubtitle("This is sample slice.")
+                .setPrimaryAction(createActivityAction()!!)
+        )
+        .addRow(
+            ListBuilder.RowBuilder()
+                .setTitle("Counter: ${CounterReceiver.value}")
+                .addEndItem(incrementAction)
+                .addEndItem(decrementAction)
+        )
+        .build()
+}
+
+
+
+
+リスト6-22
+<receiver android:name=".CounterReceiver"/>
+
+
+
+
+リスト6-23
+def camerax_version = "1.0.0-beta03"
+implementation "androidx.camera:camera-core:$camerax_version"
+implementation "androidx.camera:camera-camera2:$camerax_version"
+implementation "androidx.camera:camera-lifecycle:$camerax_version"
+implementation "androidx.camera:camera-view:1.0.0-alpha10"
+
+
+
+
+リスト6-24
+<uses-feature android:name="android.hardware.camera" />
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+
+リスト6-25
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camera_container"
+    android:background="@android:color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take a Picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+リスト6-26
+package com.example.myfirstapp
+
+
+import android.Manifest
+import android.content.*
+import android.content.pm.PackageManager
+import android.os.Bundle
+import android.provider.MediaStore
+import android.view.Surface
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.*
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.LifecycleOwner
+import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.concurrent.*
+
+
+private const val PERMISSIONS_REQUEST_CODE = 1234
+
+
+private val PERMISSIONS_REQUIRED = arrayOf(
+        Manifest.permission.CAMERA,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+)
+
+
+class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var appExecutor: Executor
+    private var preview: Preview? = null
+    private var imageCapture: ImageCapture? = null
+    private var camera: Camera? = null
+    private var imageAnalyzer: ImageAnalysis? = null
+
+
+    private val imageSavedCB =
+        object : ImageCapture.OnImageSavedCallback {
+
+
+            override fun onImageSaved(outputFileResults:
+                      ImageCapture.OutputFileResults) {
+                Toast.makeText(applicationContext,
+                "save to file.", Toast.LENGTH_LONG).show()
+            }
+
+
+            override fun onError(exception: ImageCaptureException) {}
+        }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        if (!hasPermissions(applicationContext)) {
+            ActivityCompat.requestPermissions(this,
+                PERMISSIONS_REQUIRED, PERMISSIONS_REQUEST_CODE)
+        }
+
+
+        setContentView(R.layout.activity_main)
+
+
+        appExecutor = ContextCompat.getMainExecutor(applicationContext)
+
+
+        bindCameraUseCases()
+
+
+        button1.setOnClickListener {
+            val contentValues = ContentValues()
+            contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME,
+                    getFileName())
+            contentValues.put(MediaStore.MediaColumns.MIME_TYPE,
+                    "image/jpg")
+
+
+            val outputOption = ImageCapture.OutputFileOptions
+                .Builder(getContentResolver(),
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    contentValues)
+                .build()
+
+
+            imageCapture?.takePicture(outputOption, appExecutor, imageSavedCB)
+        }
+    }
+
+
+    private fun bindCameraUseCases() {
+
+
+        val cameraSelector = CameraSelector.Builder()
+            .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+            .build()
+        val cameraProvider = ProcessCameraProvider
+            .getInstance(applicationContext)
+
+
+        cameraProvider.addListener(Runnable {
+            val cameraProvider =
+                cameraProvider.get()
+
+
+            preview = Preview.Builder()
+                .setTargetAspectRatio(AspectRatio.RATIO_4_3)
+                .setTargetRotation(Surface.ROTATION_0)
+                .build()
+            preview?.setSurfaceProvider(preview1.createSurfaceProvider(camera?.cameraInfo))
+
+
+            imageCapture = ImageCapture.Builder()
+                .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                .setTargetAspectRatio(AspectRatio.RATIO_4_3)
+                .setTargetRotation(Surface.ROTATION_0)
+                .build()
+
+
+            imageAnalyzer = ImageAnalysis.Builder()
+                .setTargetAspectRatio(AspectRatio.RATIO_4_3)
+                .setTargetRotation(Surface.ROTATION_0)
+                .build()
+
+
+            cameraProvider.unbindAll()
+
+
+            try {
+                camera = cameraProvider.bindToLifecycle(
+                    this as LifecycleOwner, cameraSelector,
+                    preview, imageCapture, imageAnalyzer
+                )
+            } catch(exc: Exception) {}
+
+
+        }, appExecutor)
+    }
+
+
+    override fun onRequestPermissionsResult(
+            requestCode: Int, permissions: Array<String>,
+            grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode,
+                permissions, grantResults)
+        if (requestCode == PERMISSIONS_REQUEST_CODE) {
+            if (PackageManager.PERMISSION_GRANTED ==
+                    grantResults.firstOrNull()) {
+                Toast.makeText(applicationContext, "Permission granted!",
+                    Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(applicationContext, "Permission denied...",
+                    Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+    companion object {
+        private const val FILENAME = "yyyy-MM-dd-HH-mm-ss-SSS"
+        private const val EXTENSION = ".jpg"
+
+
+        fun getFileName(): String {
+            return SimpleDateFormat(FILENAME, Locale.US)
+                .format(System.currentTimeMillis()
+                ) + EXTENSION
+        }
+
+
+        fun hasPermissions(context: Context) =
+            PERMISSIONS_REQUIRED.all {
+                ContextCompat.checkSelfPermission(context, it) ==
+                    PackageManager.PERMISSION_GRANTED
+            }
+    }
+}
+
+
+
+
+リスト6-27
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+
+kotlinOptions {
+    jvmTarget = "1.8"
+}
+
+
+
+
+リストA-1
+fun main() {
+    val tax = 0.1
+    var price = 10000
+    println("price:${price} with tax:${price * (1.0 + tax)}")
+    price = 123400
+    println("price:${price} with tax:${price * (1.0 + tax)}")
+}
+
+
+
+
+リストA-2
+fun main() {
+    val num = 12345
+    if (num % 2 == 0) {
+        println("${num} is EVEN NUMBER.")
+    } else {
+        println("${num} is ODD NUMBER.")
+    }
+}
+
+
+
+
+リストA-3
+fun main() {
+    val num = 12345
+    when (num % 2) {
+        0 -> println("${num} is EVEN NUMBER.")
+        1 -> println("${num} is ODD NUMBER.")
+    }
+}
+
+
+
+
+リストA-4
+fun main() {
+    val num = 100
+    var total = 0
+    for (n in 1..num) {
+        total += n
+    }
+    println("total from 1 to ${num} : ${total}.")
+}
+
+
+
+
+リストA-5
+fun main() {
+    val num = 100
+    var total = 0
+    var count = 1
+    while(count <= num) {
+        total += count
+        count++
+    }
+    println("total from 1 to ${num} : ${total}.")
+}
+
+
+
+
+リストA-6
+fun main() {
+    val arr = arrayOf(12, 34, 56, 78, 90)
+    var total = 0
+    for (n in arr) {
+        total += n
+    }
+    println("total: ${total}.")
+}
+
+
+
+
+リストA-7
+fun main() {
+    val list = listOf("Hello", 123, true)
+    var result = ""
+    for (item in list) {
+        result += "${item} "
+    }
+    println(result)
+}
+
+
+
+
+リストA-8
+fun main() {
+    val map = mapOf("one" to 123, "two" to 456, "three" to 789)
+    var total = 0
+    for ((key, value) in map) {
+        total += value
+    }
+    print("total: ${total}.")
+}
+
+
+
+
+リストA-9
+fun main() {
+    val res = calc(12300, 0.08)
+    message(res)
+    message(calc(987600))
+}
+
+
+fun message(data:Double) {
+    println("price: ${data}")
+}
+
+
+fun calc(price:Int, tax:Double = 0.1): Double {
+    return price * (1.0 + tax)
+}
+
+
+
+
+リストA-10
+fun main() {
+    val calc: (Int, Double)-> Double = { price, tax -> price * (1.0 + tax) }
+    
+    val price = 123400
+    println("price:${price} with tax:${calc(price, 0.1)}")
+    
+    val total: (Int)-> Int = {
+        var result = 0
+        for (n in 1..it) {
+            result += n
+        }
+        result
+    }
+
+
+    val n = 1000
+    println("0 to ${n} total: ${total(n)}.")
+}
+
+
+
+
+リストA-11
+fun main() {
+    message(123400.0, { it * 1.1 })
+    message(100.0, { it * it })
+}
+
+
+fun message(num:Double, data: (Double)-> Double) {
+    println("value: ${num},  result: ${data(num)}!")
+}
+
+
+
+
+リストA-12
+fun main() {
+    val hello = Hello("Taro")
+    hello.say()
+}
+
+
+class Hello(name:String) {
+    var name = name
+    
+    fun say() {
+        println("I'm ${name}!!")
+    }
+}
+
+
+
+
+リストA-13
+class Hello(name:String) {
+    var name:String
+    
+    init {
+        this.name = name
+    }
+    
+    fun say() {
+        println("I'm ${name}!!")
+    }
+}
+
+
+
+
+リストA-14
+class Hello {
+    var name: String = "no-name"
+    var age: Int = 0
+    
+    constructor(name:String) {
+        this.name = name
+    }
+    constructor(age:Int) {
+        this.age = age
+    }
+    constructor(name:String, age:Int) {
+        this.name = name
+        this.age = age
+    }
+
+
+    fun say() {
+        println("Hello, I'm ${name}. ${age} years old.")
+    }
+}
+
+
+
+
+リストA-15
+fun main() {
+    val hello = Hello()
+    hello.say()
+     val welcome = Message()
+    welcome.say()
+}
+
+
+open class Hello {
+    
+    open fun say() {
+        println("Hello!")
+    }
+}
+
+
+class Message: Hello() {
+    
+    override fun say() {
+        println("Hello! How are you?")
+    }
+}
+
+
+
+
+リストA-16
+fun main() {
+    val hello = Hello("Taro")
+    hello.say()
+     val welcome = Message("Hanako", "Welcome")
+    welcome.say()
+}
+
+
+open class Hello(name:String) {
+    var name:String = name
+
+
+    open fun say() {
+        println("I'm ${name}!!")
+    }
+}
+
+
+class Message(name:String, header:String): Hello(name) {
+    var header:String
+    
+    init {
+        this.name = name
+        this.header = header
+    }
+    
+    override fun say() {
+        println("${header}! I'm ${name}!!")
+    }
+}
+
+
+★図A-13：プライマリ・コンストラクタ利用のHelloクラスを継承してMessageを作り出力す
+リストA-17
+fun main() {
+    Hello("Hanako").say()
+    Message("THANKS").say()
+}
+
+
+interface Say {
+    fun say()
+}
+
+
+open class Hello(name:String):Say {
+    var name = name
+    
+    override open fun say() {
+        println("Hello, ${name}!")
+    }
+}
+
+
+class Message(msg:String): Say {
+    var msg = msg
+    
+    override open fun say() {
+        println("I say '${msg}.'.")
+    }
+}
+
+
+
+
+リストA-18
+fun main() {
+    Hello("Hanako").say()
+    Message("THANKS").say()
+}
+
+
+abstract class Say(name:String) {
+    var name = name
+    abstract fun say()
+}
+
+
+open class Hello(name:String): Say(name){
+    
+    override open fun say() {
+        println("Hello, ${name}!")
+    }
+}
+
+
+open class Message(msg:String): Say(msg) {
+    var msg = msg
+    
+    override open fun say() {
+        println("I say '${msg}.'.")
+    }
+}
+
+
+
+
+リストA-19
+fun main() {
+    val p = Person("Taro", 39)
+    val hello =  Hello(p)
+    hello.say()
+    hello.person.setData("Hanako", 28)
+    hello.say()
+}
+
+
+data class Person(var name:String, var age:Int)
+
+
+fun Person.setData(name:String, age:Int) {
+    this.name = name
+    this.age = age
+}
+
+
+object Printing {
+    fun getData(p:Person):String {
+        return "${p.name}(${p.age})"
+    }
+}
+
+
+class Hello(person:Person){
+    var person = person
+    
+    fun say() {
+        val data = Printing.getData(person)
+        println("I am '${data}'!")
+    }
+}
+
+
+
+
+リストA-20
+fun main() {
+    val p = Person("Taro", 39)
+          val taro =  Hello(p)
+    taro.say()
+    val nobody = Hello(null)
+    nobody.say()
+}
+
+
+class Person(name:String, age:Int) {
+    var name = name
+    var age = age
+    
+    fun data():String {
+        return "${name}(${age})"
+    }
+}
+
+
+class Hello(person:Person?) {
+    var person:Person?
+    
+    init {
+        this.person = person
+    }
+    
+    fun say() {
+        val data = person?.data() ?: Person("no-name", 0).data()
+        println("I am '${data}'!")
+    }
+}
+
+
+
+
+リストA-21
+fun main() {
+    val p = Hello().apply {
+        this.person = Person("Taro", 39)
+    }
+    p.say()
+}
+
+
+class Person(name:String, age:Int) {
+    var name = name
+    var age = age
+}
+
+
+class Hello() {
+    var person:Person? = null
+    
+    fun say() {
+        println("${person?.name}(${person?.age}).")
+    }
+}

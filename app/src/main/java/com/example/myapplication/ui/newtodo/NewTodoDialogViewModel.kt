@@ -1,25 +1,24 @@
 package com.example.myapplication.ui.newtodo
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import com.example.myapplication.TodoApplication.Companion.database
 import com.example.myapplication.TodoRepository
 import com.example.myapplication.room.Todo
-import com.example.myapplication.room.TodoDao
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class NewTodoDialogViewModel(
-    application: Application,
-    todoDao: TodoDao
-):AndroidViewModel(application){
+class NewTodoDialogViewModel:ViewModel() {
 
-    private val todorepository = TodoRepository(todoDao)
+    private val todoRepository: TodoRepository = TodoRepository(database.todoDao())
     var title:String = ""
     var contents:String = ""
 
-
-    suspend fun addEditext(){
-        todorepository.insert(Todo(title,contents))
+    fun addEdiText(){
+        CoroutineScope(Dispatchers.IO).launch {
+            todoRepository.insert(Todo(title,contents))
+        }
     }
-
 }
 /*viewmodelを継承
 * ポジティブボタンのリスな設定。

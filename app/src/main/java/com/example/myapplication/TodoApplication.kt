@@ -2,8 +2,10 @@ package com.example.myapplication
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.room.Room
 import com.example.myapplication.room.AppDatabase
+import timber.log.Timber
 
 class TodoApplication: Application() {
 
@@ -19,9 +21,8 @@ class TodoApplication: Application() {
     }
 
     private fun initTimber() {
-        if (BuildConfig.DEBUG) {
-
-        }
+        if (BuildConfig.DEBUG)
+            Timber.plant(Timber.DebugTree())
     }
 
     private fun initRoom() {

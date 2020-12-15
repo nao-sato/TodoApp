@@ -18,8 +18,8 @@ class TodoRepository (private val todoDao: TodoDao){
         Log.d(TAG,"insert")
     }
     @WorkerThread
-    fun load(){
-        todoDao.loadAllTodo()
+    fun load(): List<Todo> {
+        return todoDao.loadAllTodo()
     }
 
 }

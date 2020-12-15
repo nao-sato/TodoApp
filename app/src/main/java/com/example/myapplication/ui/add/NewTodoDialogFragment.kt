@@ -23,12 +23,10 @@ class NewTodoDialogFragment : DialogFragment() {
 
         builder.setView(binding.root)
             .setTitle(R.string.dia_title)
-            .setPositiveButton(R.string.dia_add){dialog, id ->
-                viewModel.addEdiText(binding.diaTitle.toString(),binding.diaContents.toString())
-                Log.d(TAG,"insert")
+            .setPositiveButton(R.string.dia_add) { _, _ ->
+                viewModel.addEdiText(binding.diaTitle.text.toString(), binding.diaContents.text.toString())
             }
-            .setNegativeButton(R.string.dia_cancel){dialog, id ->
-            }
+            .setNegativeButton(R.string.dia_cancel) { _, _ -> }
 
         return builder.create()
     }

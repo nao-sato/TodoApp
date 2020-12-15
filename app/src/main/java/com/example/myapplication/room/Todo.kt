@@ -10,4 +10,6 @@ class Todo(title: String, contents: String) {
         var id: Int = 0
         var title: String = title
         var contents: String = contents
+
+        fun to_s():String = "$title,$contents"
 }

@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="viewmodel"
-            type="com.example.myapplication.ui.newtodo.NewTodoDialogViewModel" />
+            name="viewModel"
+            type="com.example.myapplication.ui.add.NewTodoDialogViewModel" />
     </data>
     <LinearLayout
         android:id="@+id/container"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={viewmodel.title}"
+            android:text=""
             android:hint="@string/ed_title"
             tools:layout_editor_absoluteX="102dp"
             tools:layout_editor_absoluteY="203dp" />
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={viewmodel.contents}"
+            android:text=""
             android:hint="@string/ed_contents"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="248dp" />

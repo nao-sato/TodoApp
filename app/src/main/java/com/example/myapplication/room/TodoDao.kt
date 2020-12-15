@@ -1,13 +1,13 @@
 package com.example.myapplication.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
+
 //データベースへの命令文をまとめたもの。
 @Dao
 interface TodoDao {
 
     @Query("SELECT * FROM todo")
-    fun loadAllTodo(): LiveData<List<Todo>>
+    fun loadAllTodo(): MutableList<Todo>
     // クエリーアノテーションを入れることでアウェイなクエリを理解してくれる。
     // 意味は（”todoテーブルから全てのレコードを取り出す”）となる。
     // テーブル名はエンティティ名と同名にする。（指定がない限り）

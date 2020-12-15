@@ -1,12 +1,8 @@
 package com.example.myapplication.room
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.internal.synchronized
+
 //DAOを使い、データベースに命令文を発行
 @Database(entities = arrayOf(Todo::class),version = 1)
 // entitiesというのは複数のエンティティが存在する場合のタイプを指定。
@@ -17,9 +13,6 @@ abstract class AppDatabase : RoomDatabase(){
 // その中の抽象メソッドはDAOのインスタンスを返す宣言がされている
 
     //シングルトンにすることでデータベースが同時に開かれる事を防ぐらしい
-    companion object{
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
 
 
 //        fun getDatabase(
@@ -39,5 +32,5 @@ abstract class AppDatabase : RoomDatabase(){
 //                instance
 //            }
 //        }
-    }//とりあえずデータベースが取れる共通のメソッド完成！
+    //とりあえずデータベースが取れる共通のメソッド完成！
 }

@@ -1,324 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AndroidStudioProjects.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jetpack.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/androidTest/java/com/example/myapplication/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/done/DoneToDoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/done/DoneToDoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/undone/UndoneToDoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/undone/UndoneToDoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/drawable/ic_home_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/drawable/ic_notifications_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/layout/fragment_dashboard.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/layout/fragment_home.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/layout/fragment_notifications.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/test/java/com/example/myapplication/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/androidTest/java/com/example/myapplication/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/ui/all/AllTodoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/ui/all/AllTodoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/ui/done/DoneTodoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/ui/done/DoneTodoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/ui/undone/UndoneTodoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/java/com/example/myapplication/ui/undone/UndoneTodoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/drawable/ic_home_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/drawable/ic_notifications_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/layout/fragment_dashboard.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/layout/fragment_home.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/layout/fragment_notifications.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/app/src/test/java/com/example/myapplication/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication3/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/androidTest/java/com/example/myfreespace/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/java/com/example/myfreespace/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/java/com/example/myfreespace/aaa.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/app/src/test/java/com/example/myfreespace/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyfreeSpace/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/androidTest/java/com/example/myapplication/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/TodoListAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/TodoRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/room/Todo.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/room/TodoDao.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/done/DoneToDoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/done/DoneToDoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/newtodo/NewTodoDialogFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/newtodo/NewTodoDialogViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/undone/UndoneToDoFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/java/com/example/myapplication/ui/undone/UndoneToDoViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/drawable/ic_home_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/layout/dialogfragment_new.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/layout/fragment_all.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/layout/fragment_done.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/layout/fragment_undone.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/layout/row.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/app/src/test/java/com/example/myapplication/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/.idea/render.experimental.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/androidTest/java/com/example/baselearningapp/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/java/com/example/baselearningapp/MainActivity2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/java/com/example/baselearningapp/MenuThankActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/layout/activity_main2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/layout/activity_menu_thank.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/layout/row.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/menu/menu_options_menu_list.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/app/src/test/java/com/example/baselearningapp/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseLearningApp/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/androidTest/java/com/example/todoapp/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/java/com/example/todoapp/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/java/com/example/todoapp/ToDo.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/java/com/example/todoapp/ui/main/MainFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/java/com/example/todoapp/ui/main/MainViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/layout/main_activity.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/layout/main_fragment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/app/src/test/java/com/example/todoapp/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoApp2/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/Todo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/Todo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/TodoDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/TodoDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/newtodo/NewTodoDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/newtodo/NewTodoDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialogfragment_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialogfragment_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -347,6 +80,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.myapplication.ui.add" />
+      <recent name="com.example.myapplication.ui.all" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -356,7 +96,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="My_Application.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -426,5 +166,67 @@
       <updated>1607773687517</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="206" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1607952999120">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="206" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1607952999120" />
+    <state x="473" y="248" width="494" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1607953012217">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="473" y="248" width="494" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1607953012217" />
+    <state x="144" y="79" key="DiffContextDialog" timestamp="1607827309701">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607827309701" />
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom" timestamp="1607962263781">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607962020979" />
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1607962263781" />
+    <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1607961472186" />
+    <state width="1396" height="203" key="GridCell.Tab.0.center" timestamp="1607962263781">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1396" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607962020978" />
+    <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1607962263781" />
+    <state width="1396" height="245" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1607961472184" />
+    <state width="1396" height="203" key="GridCell.Tab.0.left" timestamp="1607962263780">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1396" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607962020978" />
+    <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1607962263780" />
+    <state width="1396" height="245" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1607961472183" />
+    <state width="1396" height="203" key="GridCell.Tab.0.right" timestamp="1607962263781">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1396" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607962020979" />
+    <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1607962263781" />
+    <state width="1396" height="245" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1607961472185" />
+    <state x="503" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607834928370">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="503" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607834928370" />
+    <state x="412" y="245" key="git4idea.merge.GitPullDialog" timestamp="1607827756385">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="412" y="245" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1607827756385" />
+    <state x="520" y="315" key="scopes" timestamp="1607952584926">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="520" y="315" key="scopes/0.0.1440.900@0.0.1440.900" timestamp="1607952584926" />
   </component>
 </project>

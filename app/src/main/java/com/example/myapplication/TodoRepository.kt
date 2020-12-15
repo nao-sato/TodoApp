@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.example.myapplication.room.Todo
@@ -9,12 +11,15 @@ import com.example.myapplication.room.TodoDao
 // これでUI層から通信のことを意識することはなくなる。
 class TodoRepository (private val todoDao: TodoDao){
     //変更の通知を受け取るためライブデータにする。
-    var Alltodo: LiveData<List<Todo>> = todoDao.loadAllTodo()
-
     //このアノテーションつけると今後insert使うときにこのスレッドでやってねと怒ってくれる。
     @WorkerThread
-    suspend fun insert(todo: Todo){
+    fun insert(todo: Todo){
         todoDao.insertTodo(todo)
+        Log.d(TAG,"insert")
+    }
+    @WorkerThread
+    fun load(){
+        todoDao.loadAllTodo()
     }
 
 }

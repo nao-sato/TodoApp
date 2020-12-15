@@ -1,5 +1,7 @@
-package com.example.myapplication.ui.newtodo
+package com.example.myapplication.ui.add
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.TodoApplication.Companion.database
 import com.example.myapplication.TodoRepository
@@ -10,13 +12,15 @@ import kotlinx.coroutines.launch
 
 class NewTodoDialogViewModel:ViewModel() {
 
-    private val todoRepository: TodoRepository = TodoRepository(database.todoDao())
-    var title:String = ""
-    var contents:String = ""
 
-    fun addEdiText(){
+
+    private val todoRepository: TodoRepository = TodoRepository(database.todoDao())
+
+    fun addEdiText(title:String,contents:String){
         CoroutineScope(Dispatchers.IO).launch {
-            todoRepository.insert(Todo(title,contents))
+            val t = Todo(title,contents)
+            todoRepository.insert(t)
+            Log.d(TAG,"insert")
         }
     }
 }

@@ -6,7 +6,7 @@
     app:startDestination="@id/navigation_all">
     <fragment
         android:id="@+id/navigation_all"
-        android:name="com.example.myapplication.ui.all.AllToDoFragment"
+        android:name="com.example.myapplication.ui.AllToDoFragment"
         android:label="fragment_all"
         tools:layout="@layout/fragment_all" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_done"
-        android:name="com.example.myapplication.ui.done.DoneToDoFragment"
+        android:name="com.example.myapplication.ui.DoneToDoFragment"
         android:label="fragment_done"
         tools:layout="@layout/fragment_done" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_undone"
-        android:name="com.example.myapplication.ui.undone.UndoneToDoFragment"
+        android:name="com.example.myapplication.ui.UndoneToDoFragment"
         android:label="fragment_undone"
         tools:layout="@layout/fragment_undone" >
         <action

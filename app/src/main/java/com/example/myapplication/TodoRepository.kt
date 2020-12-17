@@ -1,7 +1,9 @@
 package com.example.myapplication
 
 import android.content.ContentValues.TAG
+import android.icu.text.CaseMap
 import android.util.Log
+import android.widget.CheckBox
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.example.myapplication.room.Todo
@@ -15,11 +17,21 @@ class TodoRepository (private val todoDao: TodoDao){
     @WorkerThread
     fun insert(todo: Todo){
         todoDao.insertTodo(todo)
-        Log.d(TAG,"insert")
     }
     @WorkerThread
-    fun load(){
-        todoDao.loadAllTodo()
+    fun load():MutableList<Todo>{
+        return todoDao.loadAllTodo()
     }
+
+    @WorkerThread
+    fun updateTodo(todo: Todo){
+        todoDao.updateTodo(todo)
+    }
+
+    @WorkerThread
+    fun updateCheck(id:Int,checked:Int){
+        todoDao.updateChecked(id, checked)
+    }
+
 
 }

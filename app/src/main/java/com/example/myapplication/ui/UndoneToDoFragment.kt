@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.undone
+package com.example.myapplication.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,20 +12,14 @@ import com.example.myapplication.R
 
 class UndoneToDoFragment : Fragment() {
 
-    private lateinit var undoneToDoViewModel: UndoneToDoViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        undoneToDoViewModel =
-                ViewModelProvider(this).get(UndoneToDoViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_undone, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        undoneToDoViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 }

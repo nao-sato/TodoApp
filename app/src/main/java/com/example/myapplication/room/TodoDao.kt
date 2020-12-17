@@ -34,6 +34,8 @@ interface TodoDao {
     fun updateTodo(todo: Todo)
     //更新を行うアノテーション
     //メソッドの引数にTodoを渡すだけ。保存のInsertと似てる。
+    @Query("update todo set is_check = :check where id=:id")
+    fun updateChecked(id: Int, check: Int)
 }
 
 //DAOインターフェースはこのように対応するアノテーションをつけてメソッドを宣言するのが基本。

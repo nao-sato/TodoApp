@@ -31,27 +31,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="insertしたデータの表示">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ActivityViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoListAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/Todo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/Todo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/TodoDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/TodoDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/newtodo/NewTodoDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/newtodo/NewTodoDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialogfragment_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialogfragment_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/NewTodoDialogViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/AllToDoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/all/AllToDoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/done/DoneToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/DoneToDoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/done/DoneToDoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/undone/UndoneToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/UndoneToDoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/undone/UndoneToDoViewModel.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_done.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_done.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_undone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_undone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -69,6 +78,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -80,10 +96,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-view/Users/satounao/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-preview/Users/satounao/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.myapplication.ui" />
       <recent name="com.example.myapplication.ui.add" />
       <recent name="com.example.myapplication.ui.all" />
     </key>
@@ -165,6 +184,14 @@
       <option name="presentableId" value="Default" />
       <updated>1607773687517</updated>
     </task>
+    <task id="LOCAL-00001" summary="insertしたデータの表示">
+      <created>1608021820689</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608021820689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,47 +206,82 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="insertしたデータの表示" />
+    <option name="LAST_COMMIT_MESSAGE" value="insertしたデータの表示" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="206" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1607952999120">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="206" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1607952999120" />
-    <state x="473" y="248" width="494" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1607953012217">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608041548074">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.812@0.23.1440.812" timestamp="1608041548074" />
+    <state x="473" y="247" width="494" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1608135044450">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="473" y="248" width="494" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1607953012217" />
+    <state x="473" y="247" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.812@0.23.1440.812" timestamp="1608135044450" />
     <state x="144" y="79" key="DiffContextDialog" timestamp="1607827309701">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607827309701" />
-    <state width="1396" height="203" key="GridCell.Tab.0.bottom" timestamp="1607962263781">
-      <screen x="0" y="23" width="1440" height="811" />
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom" timestamp="1608224740872">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607962020979" />
     <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1607962263781" />
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1608224740872" />
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1608094486564" />
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1607961472186" />
-    <state width="1396" height="203" key="GridCell.Tab.0.center" timestamp="1607962263781">
-      <screen x="0" y="23" width="1440" height="811" />
+    <state width="1396" height="203" key="GridCell.Tab.0.center" timestamp="1608224740872">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607962020978" />
     <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1607962263781" />
+    <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1608224740872" />
+    <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1608094486563" />
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1607961472184" />
-    <state width="1396" height="203" key="GridCell.Tab.0.left" timestamp="1607962263780">
-      <screen x="0" y="23" width="1440" height="811" />
+    <state width="1396" height="203" key="GridCell.Tab.0.left" timestamp="1608224740871">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607962020978" />
     <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1607962263780" />
+    <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1608224740871" />
+    <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1608094486563" />
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1607961472183" />
-    <state width="1396" height="203" key="GridCell.Tab.0.right" timestamp="1607962263781">
-      <screen x="0" y="23" width="1440" height="811" />
+    <state width="1396" height="203" key="GridCell.Tab.0.right" timestamp="1608224740872">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607962020979" />
     <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1607962263781" />
+    <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1608224740872" />
+    <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1608094486564" />
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1607961472185" />
+    <state x="320" y="168" key="Vcs.Push.Dialog.v2" timestamp="1608021838271">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1608021838271" />
     <state x="503" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607834928370">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="503" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607834928370" />
+    <state x="855" y="23" width="906" height="482" key="dock-window-1" timestamp="1608088031717">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="439" y="84" width="906" height="641" key="dock-window-1/0.23.1440.808@0.23.1440.808" timestamp="1608044453711" />
+    <state x="855" y="23" width="906" height="482" key="dock-window-1/0.23.1440.812@0.23.1440.812" timestamp="1608088031717" />
+    <state x="25" y="276" width="906" height="482" key="dock-window-2" timestamp="1608088031717">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="25" y="276" width="906" height="482" key="dock-window-2/0.23.1440.812@0.23.1440.812" timestamp="1608088031717" />
+    <state x="534" y="23" width="906" height="484" key="dock-window-3" timestamp="1608093841907">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state x="618" y="23" width="906" height="482" key="dock-window-3/0.23.1440.812@0.23.1440.812" timestamp="1608088031718" />
+    <state x="534" y="23" width="906" height="484" key="dock-window-3/0.23.1440.814@0.23.1440.814" timestamp="1608093841907" />
     <state x="412" y="245" key="git4idea.merge.GitPullDialog" timestamp="1607827756385">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -228,5 +290,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="520" y="315" key="scopes/0.0.1440.900@0.0.1440.900" timestamp="1607952584926" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup" timestamp="1608178708852">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1608178708852" />
   </component>
 </project>

@@ -15,5 +15,12 @@ class Todo(title: String, contents: String, checked: Int) {
         @ColumnInfo(name = "is_check")
         var checked: Int = checked
 
+        override fun toString(): String {
+                return StringBuilder()
+                        .append("id").append(id).append(",")
+                        .append("cheke").append(checked).append(",")
+                        .toString()
+        }
+
 }
 

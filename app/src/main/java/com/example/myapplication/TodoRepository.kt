@@ -18,6 +18,7 @@ class TodoRepository (private val todoDao: TodoDao){
     fun insert(todo: Todo){
         todoDao.insertTodo(todo)
     }
+
     @WorkerThread
     fun load():MutableList<Todo>{
         return todoDao.loadAllTodo()
@@ -33,5 +34,9 @@ class TodoRepository (private val todoDao: TodoDao){
         todoDao.updateChecked(id, checked)
     }
 
+    @WorkerThread
+    fun deleteTodo(todo: Todo){
+        todoDao.deleteTodo(todo)
+    }
 
 }

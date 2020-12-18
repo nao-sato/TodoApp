@@ -1,23 +1,14 @@
 package com.example.myapplication.ui.add
 
-import android.content.ContentValues.TAG
-import android.icu.text.Transliterator
-import android.util.Log
-import android.view.LayoutInflater
-import android.widget.CheckBox
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.RecyclerView
-import androidx.room.PrimaryKey
-import com.example.myapplication.TodoApplication
 import com.example.myapplication.TodoApplication.Companion.database
-import com.example.myapplication.TodoListAdapter
 import com.example.myapplication.TodoRepository
 import com.example.myapplication.room.Todo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NewTodoDialogViewModel:ViewModel() {
+class AddTodoDialogViewModel:ViewModel() {
 
     private val todoRepository: TodoRepository = TodoRepository(database.todoDao())
 

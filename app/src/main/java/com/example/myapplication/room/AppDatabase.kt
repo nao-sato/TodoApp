@@ -12,11 +12,5 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 abstract class AppDatabase : RoomDatabase(){
     abstract fun todoDao(): TodoDao
 // RoomDatabaseを継承した抽象クラス。
-// その中の抽象メソッドはDAOのインスタンスを返す宣言がされている
-
-}
-val MIGRATION_1_2 = object: Migration(1,2){
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL("ALTER TABLE Todo　ADD COLUMN is_check INTEGER")
-    }
+// その中の抽象メソッドはDAOのインスタンスを返す宣言がされてい
 }

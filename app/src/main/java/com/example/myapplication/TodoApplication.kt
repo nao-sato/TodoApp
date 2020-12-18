@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.example.myapplication.room.AppDatabase
-import com.example.myapplication.room.MIGRATION_1_2
 
 //アプリが起動したときに初期化しておきたい処理や複数インスタンス化するような処理はここに書く
 class TodoApplication: Application() {
@@ -34,7 +33,6 @@ class TodoApplication: Application() {
                 AppDatabase::class.java,
                 "Todo_database"
         )
-                .addMigrations(MIGRATION_1_2)
                 .build()
     }
 

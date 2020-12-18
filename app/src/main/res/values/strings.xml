@@ -8,4 +8,7 @@
     <string name="dia_title">新しいTodo</string>
     <string name="dia_add">追加</string>
     <string name="dia_cancel">取り消し</string>
+    <string name="context_delete">削除</string>
+    <string name="context_edit">編集</string>
+    <string name="context_header">操作を選んでください</string>
 </resources>

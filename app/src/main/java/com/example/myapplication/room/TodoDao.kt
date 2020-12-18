@@ -1,5 +1,6 @@
 package com.example.myapplication.room
 
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 //データベースへの命令文をまとめたもの。
@@ -34,8 +35,12 @@ interface TodoDao {
     fun updateTodo(todo: Todo)
     //更新を行うアノテーション
     //メソッドの引数にTodoを渡すだけ。保存のInsertと似てる。
+
     @Query("update todo set is_check = :check where id=:id")
     fun updateChecked(id: Int, check: Int)
+
+    @Delete
+    fun deleteTodo(todo: Todo)
 }
 
 //DAOインターフェースはこのように対応するアノテーションをつけてメソッドを宣言するのが基本。

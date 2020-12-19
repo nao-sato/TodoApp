@@ -24,6 +24,7 @@ class TodoListAdapter(
 ): RecyclerView.Adapter<TodoListAdapter.TodoHolder>() {
 
 
+    var onClickEditTodo: ((Todo) -> Unit)? = null
 
     override fun getItemCount() = TodoList.size
 
@@ -31,7 +32,7 @@ class TodoListAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoHolder {
         val binding = RowBinding.inflate(layoutInflater,parent,false)
         //いでよ、TodoHolder！上で取得したビューを添えて。
-        return TodoHolder(binding)
+        return TodoHolder(binding, onClickEditTodo)
     }
 
     //引数のpositionで現在表示されているデータの位置を特定し、それに対応して第一引数のデータを取得/holderに格納をしている。
@@ -43,7 +44,8 @@ class TodoListAdapter(
     //各アイテム、つまりTodo1つ1つのビューを保持するクラス
     class TodoHolder(
             //親クラスの引数に渡す引数
-            private val binding: RowBinding
+            private val binding: RowBinding,
+            private val onClickEditTodo: ((Todo) -> Unit)?
     ): RecyclerView.ViewHolder(binding.root) {
         fun bind(todo: Todo) {
             var todoRepository = TodoRepository(TodoApplication.database.todoDao())
@@ -81,12 +83,12 @@ class TodoListAdapter(
 
 
         private fun openEditDialog(todo: Todo){
-            val dialog = EditTodoDialogFragment()
-
-            dialog.arguments?.putInt("id",todo.id)
-            dialog.arguments?.putString("title",todo.title)
-            dialog.arguments?.putString("contents",todo.contents)
-            dialog.show(TodoApplication.supportFragmentManager,"EditDialog")
+            onClickEditTodo?.invoke(todo)
+//            val dialog = EditTodoDialogFragment()
+//            dialog.arguments?.putInt("id",todo.id)
+//            dialog.arguments?.putString("title",todo.title)
+//            dialog.arguments?.putString("contents",todo.contents)
+//            dialog.show(TodoApplication.supportFragmentManager,"EditDialog")
         }
 
         private fun jageBool(isChecked: Boolean): Int {

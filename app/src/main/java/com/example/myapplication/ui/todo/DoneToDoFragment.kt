@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.ui.MainViewModel
 import com.example.myapplication.databinding.FragmentDoneBinding
 
-class DoneToDoFragment : Fragment() {
+class DoneToDoFragment : BaseTodoFragment() {
 
     lateinit var binding:FragmentDoneBinding
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -35,9 +36,7 @@ class DoneToDoFragment : Fragment() {
             mainViewModel.loadDoneTodo()
         }
 
-        private fun layout(){
-            val recyclerView: RecyclerView = binding.todoList
-            recyclerView.layoutManager = mainViewModel.layout
-            recyclerView.adapter = mainViewModel.adapter
-        }
+    private fun layout(){
+        initRecyclerView(binding.todoList,  mainViewModel.layout, mainViewModel.adapter)
+    }
 }

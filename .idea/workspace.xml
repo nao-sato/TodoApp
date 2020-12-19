@@ -32,17 +32,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="Todoリストを各ページに振り分け。&#10;Todo削除のポップアップメニューを実装。（編集機能はまだ）&#10;ViewPagerを実装したが、左右のスクロールができない。">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/TodoDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/TodoDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/AddTodoDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/add/AddTodoDialogFragment.kt" afterDir="false" />
+    <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="ViewHolderから編集機能（EditTodoDialogFragment）を実装中。&#10;ポップアップメニューの編集を押すところでクラッシュ。">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/edit/EditTodoDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/edit/EditTodoDialogFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/edit/EditTodoDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/edit/EditTodoDialogViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialogfragment_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/add_todo_dialog_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/edit_todo_dialog_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/edit_todo_dialog_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608308269162</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ViewHolderから編集機能（EditTodoDialogFragment）を実装中。&#10;ポップアップメニューの編集を押すところでクラッシュ。">
+      <created>1608352336122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608352336122</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +214,8 @@
     <MESSAGE value="insertしたデータの表示" />
     <MESSAGE value="マイグレーション　バージョンアップ" />
     <MESSAGE value="Todoリストを各ページに振り分け。&#10;Todo削除のポップアップメニューを実装。（編集機能はまだ）&#10;ViewPagerを実装したが、左右のスクロールができない。" />
-    <option name="LAST_COMMIT_MESSAGE" value="Todoリストを各ページに振り分け。&#10;Todo削除のポップアップメニューを実装。（編集機能はまだ）&#10;ViewPagerを実装したが、左右のスクロールができない。" />
+    <MESSAGE value="ViewHolderから編集機能（EditTodoDialogFragment）を実装中。&#10;ポップアップメニューの編集を押すところでクラッシュ。" />
+    <option name="LAST_COMMIT_MESSAGE" value="ViewHolderから編集機能（EditTodoDialogFragment）を実装中。&#10;ポップアップメニューの編集を押すところでクラッシュ。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1608305650294">
@@ -240,41 +239,42 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607827309701" />
-    <state width="1396" height="203" key="GridCell.Tab.0.bottom" timestamp="1608347934729">
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom" timestamp="1608352149567">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607962020979" />
-    <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1608347934729" />
+    <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1608352149567" />
     <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1608308355379" />
     <state width="1396" height="161" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1608263316561" />
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1607961472186" />
-    <state width="1396" height="203" key="GridCell.Tab.0.center" timestamp="1608347934728">
+    <state width="1396" height="203" key="GridCell.Tab.0.center" timestamp="1608352149566">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607962020978" />
-    <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1608347934728" />
+    <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1608352149566" />
     <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1608308355379" />
     <state width="1396" height="161" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1608263316561" />
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1607961472184" />
-    <state width="1396" height="203" key="GridCell.Tab.0.left" timestamp="1608347934728">
+    <state width="1396" height="203" key="GridCell.Tab.0.left" timestamp="1608352149565">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607962020978" />
-    <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1608347934728" />
+    <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1608352149565" />
     <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1608308355378" />
     <state width="1396" height="161" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1608263316560" />
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1607961472183" />
-    <state width="1396" height="203" key="GridCell.Tab.0.right" timestamp="1608347934729">
+    <state width="1396" height="203" key="GridCell.Tab.0.right" timestamp="1608352149567">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607962020979" />
-    <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1608347934729" />
+    <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1608352149567" />
     <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1608308355379" />
     <state width="1396" height="161" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1608263316561" />
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1607961472185" />
-    <state x="320" y="168" key="Vcs.Push.Dialog.v2" timestamp="1608308342216">
-      <screen x="0" y="23" width="1440" height="812" />
+    <state x="320" y="168" key="Vcs.Push.Dialog.v2" timestamp="1608352351020">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
+    <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1608352351020" />
     <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1608308342216" />
     <state x="503" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607834928370">
       <screen x="0" y="0" width="1440" height="900" />

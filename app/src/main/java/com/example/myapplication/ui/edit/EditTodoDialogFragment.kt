@@ -36,6 +36,7 @@ class EditTodoDialogFragment : DialogFragment() {
         builder.setView(binding.root)
                 .setTitle(R.string.dia_title)
                 .setPositiveButton(R.string.dia_add){ _, _ ->
+                    //!!のところ、後ほどやり直し。
                     viewModel.updateTodo(viewModel.id!!,viewModel.title!!,viewModel.contents!!)
                     mainViewModel.loadAllTodo()
                 }

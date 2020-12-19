@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.ui.MainViewModel
 import com.example.myapplication.databinding.FragmentUndoneBinding
 
-class UndoneToDoFragment : Fragment() {
+class UndoneToDoFragment : BaseTodoFragment() {
 
     lateinit var binding:FragmentUndoneBinding
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -36,8 +37,6 @@ class UndoneToDoFragment : Fragment() {
     }
 
     private fun layout(){
-        val recyclerView: RecyclerView = binding.todoList
-        recyclerView.layoutManager = mainViewModel.layout
-        recyclerView.adapter = mainViewModel.adapter
+        initRecyclerView(binding.todoList,  mainViewModel.layout, mainViewModel.adapter)
     }
 }

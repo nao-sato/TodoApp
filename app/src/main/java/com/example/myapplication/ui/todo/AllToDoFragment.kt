@@ -9,7 +9,7 @@ import com.example.myapplication.ui.MainViewModel
 import com.example.myapplication.TodoApplication
 import com.example.myapplication.databinding.FragmentAllBinding
 
-class AllToDoFragment : Fragment() {
+class AllToDoFragment : BaseTodoFragment() {
 
     private lateinit var binding: FragmentAllBinding
 
@@ -37,9 +37,7 @@ class AllToDoFragment : Fragment() {
     }
 
     private fun layout(){
-        val recyclerView: RecyclerView = binding.todoList
-        recyclerView.layoutManager = mainViewModel.layout
-        recyclerView.adapter = mainViewModel.adapter
+        initRecyclerView(binding.todoList,  mainViewModel.layout, mainViewModel.adapter)
     }
     /*
     private fun listener(){

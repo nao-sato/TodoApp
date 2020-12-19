@@ -31,13 +31,13 @@ interface TodoDao {
     // 意味は（”追加する値が既に存在しても、無視して進む”）となる。
     // メソッドの引数に保存するエンティティインスタンスを渡すようにする。
 
-    @Update
-    fun updateTodo(todo: Todo)
+    @Query("update todo set title = :Title, contents = :Contents where id=:id")
+    fun updateTodo(id: Int, Title: String, Contents: String)
     //更新を行うアノテーション
     //メソッドの引数にTodoを渡すだけ。保存のInsertと似てる。
 
-    @Query("update todo set is_check = :check where id=:id")
-    fun updateChecked(id: Int, check: Int)
+    @Query("update todo set is_check = :Check where id=:id")
+    fun updateChecked(id: Int, Check: Int)
 
     @Delete
     fun deleteTodo(todo: Todo)

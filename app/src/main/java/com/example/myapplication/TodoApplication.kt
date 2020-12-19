@@ -2,6 +2,8 @@ package com.example.myapplication
 
 import android.app.Application
 import android.content.Context
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import androidx.room.Room
 import com.example.myapplication.room.AppDatabase
 
@@ -11,6 +13,7 @@ class TodoApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         TodoApplication.applicationContext = applicationContext
+        supportFragmentManager = FragmentActivity().supportFragmentManager
         initialize()
     }
 
@@ -39,5 +42,6 @@ class TodoApplication: Application() {
     companion object {
         lateinit var applicationContext: Context
         lateinit var database: AppDatabase
+        lateinit var supportFragmentManager: FragmentManager
     }
 }

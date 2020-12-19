@@ -25,8 +25,8 @@ class TodoRepository (private val todoDao: TodoDao){
     }
 
     @WorkerThread
-    fun updateTodo(todo: Todo){
-        todoDao.updateTodo(todo)
+    fun updateTodo(id:Int,title:String,contents:String){
+        todoDao.updateTodo(id,title,contents)
     }
 
     @WorkerThread

@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -80,13 +81,12 @@ class TodoListAdapter(
 
 
         private fun openEditDialog(todo: Todo){
-            val dialog = AddTodoDialogFragment()
-            val intent = Intent(TodoApplication.applicationContext,EditTodoDialogFragment::class.java)
+            val dialog = EditTodoDialogFragment()
 
-            intent.putExtra("title",todo.title)
-            intent.putExtra("contents",todo.contents)
-
-           // dialog.show()
+            dialog.arguments?.putInt("id",todo.id)
+            dialog.arguments?.putString("title",todo.title)
+            dialog.arguments?.putString("contents",todo.contents)
+            dialog.show(TodoApplication.supportFragmentManager,"EditDialog")
         }
 
         private fun jageBool(isChecked: Boolean): Int {

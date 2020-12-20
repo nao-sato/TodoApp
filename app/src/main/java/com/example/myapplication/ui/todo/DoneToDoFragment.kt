@@ -14,7 +14,7 @@ import com.example.myapplication.databinding.FragmentDoneBinding
 class DoneToDoFragment : BaseTodoFragment() {
 
     lateinit var binding:FragmentDoneBinding
-    private val mainViewModel: MainViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater,

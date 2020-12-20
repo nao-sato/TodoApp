@@ -14,7 +14,7 @@ import com.example.myapplication.databinding.FragmentUndoneBinding
 class UndoneToDoFragment : BaseTodoFragment() {
 
     lateinit var binding:FragmentUndoneBinding
-    private val mainViewModel: MainViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
 
     override fun onCreateView(

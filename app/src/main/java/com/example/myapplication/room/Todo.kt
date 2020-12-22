@@ -5,7 +5,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//基本的には普通のクラス。ただこれはDBからデータのテーブルであるから必要なデータはここから持ってくる。
 @Entity
 class Todo(title: String, contents: String, checked: Int) {
         @PrimaryKey(autoGenerate = true) var id: Int = 0

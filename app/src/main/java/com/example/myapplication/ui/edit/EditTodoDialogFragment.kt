@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import com.example.myapplication.R
 import com.example.myapplication.databinding.AddTodoDialogFragmentBinding
@@ -21,25 +23,27 @@ import com.example.myapplication.ui.add.AddTodoDialogViewModel
 class EditTodoDialogFragment : DialogFragment() {
     private lateinit var binding: EditTodoDialogFragmentBinding
     private val viewModel: EditTodoDialogViewModel by viewModels()
-    private val mainViewModel: MainViewModel by viewModels()
+
+
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
 
+
         val builder = AlertDialog.Builder(activity)
         binding = EditTodoDialogFragmentBinding.inflate(layoutInflater,null, false)
-
-
-
+        binding.viewModel = viewModel
 
         builder.setView(binding.root)
-                .setTitle(R.string.dia_title)
-                .setPositiveButton(R.string.dia_add){ _, _ ->
-                    //!!のところ、後ほどやり直し。
-                    viewModel.updateTodo(viewModel.id!!,viewModel.title!!,viewModel.contents!!)
-                    mainViewModel.loadAllTodo()
+                .setTitle(R.string.context_edit)
+                .setPositiveButton(R.string.dia_add) { _, _ ->
+                        viewModel.updateTodo(viewModel.id!!,
+                            binding.diaTitle.text.toString(),
+                            binding.diaContents.text.toString()
+                        )
                 }
+
                 .setNegativeButton(R.string.dia_cancel){ _, _ ->
                 }
 

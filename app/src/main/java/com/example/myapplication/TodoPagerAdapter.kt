@@ -7,7 +7,7 @@ import com.example.myapplication.ui.todo.AllToDoFragment
 import com.example.myapplication.ui.todo.DoneToDoFragment
 import com.example.myapplication.ui.todo.UndoneToDoFragment
 
-class TodoPagerAdapter(fragmentManager: FragmentManager):FragmentStatePagerAdapter(
+class TodoPagerAdapter(fragmentManager: FragmentManager): FragmentStatePagerAdapter(
     fragmentManager,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 ) {

@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.todo
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.TodoListAdapter
@@ -17,12 +18,15 @@ open class BaseTodoFragment: Fragment() {
         }
     }
 
+
     private fun showEditDialogFragment(todo: Todo) {
         val fragmentManager = activity?.supportFragmentManager ?: return
         val dialog = EditTodoDialogFragment()
-        dialog.arguments?.putInt("id",todo.id)
-        dialog.arguments?.putString("title",todo.title)
-        dialog.arguments?.putString("contents",todo.contents)
+        var bundle = Bundle()
+        bundle.putInt("id",todo.id)
+        bundle.putString("title",todo.title)
+        bundle.putString("contents",todo.contents)
+        dialog.arguments = bundle
         dialog.show(fragmentManager,"EditDialog")
     }
 }

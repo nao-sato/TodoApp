@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import com.example.myapplication.R
 import com.example.myapplication.databinding.AddTodoDialogFragmentBinding
 import com.example.myapplication.ui.MainViewModel
+import com.example.myapplication.ui.todo.AllToDoFragment
 
 class AddTodoDialogFragment : DialogFragment() {
 
@@ -27,12 +28,18 @@ class AddTodoDialogFragment : DialogFragment() {
             .setTitle(R.string.dia_title)
             .setPositiveButton(R.string.dia_add){ _, _ ->
                 viewModel.addEdiText(binding.diaTitle.text.toString(),binding.diaContents.text.toString())
-                mainViewModel.loadAllTodo()
+                loadEachFragment()
             }
             .setNegativeButton(R.string.dia_cancel){ _, _ ->
             }
 
         return builder.create()
+    }
+
+    fun loadEachFragment(){
+        mainViewModel.loadAllTodo()
+        mainViewModel.loadDoneTodo()
+        mainViewModel.loadUndoneTodo()
     }
 
 

@@ -37,9 +37,9 @@ class AddTodoDialogFragment : DialogFragment() {
     }
 
     fun loadEachFragment(){
-        mainViewModel.loadAllTodo()
-        mainViewModel.loadDoneTodo()
-        mainViewModel.loadUndoneTodo()
+//        mainViewModel.loadAllTodo()
+//        mainViewModel.loadDoneTodo()
+//        mainViewModel.loadUndoneTodo()
     }
 
 

@@ -1,25 +1,27 @@
 package com.example.myapplication.ui.todo
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.TodoListAdapter
 import com.example.myapplication.databinding.FragmentAllBinding
 import com.example.myapplication.ui.MainViewModel
 
-class AllToDoFragment : BaseTodoFragment() {
+class AllToDoFragment : Fragment() {
 
     private lateinit var binding: FragmentAllBinding
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentAllBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -27,14 +29,19 @@ class AllToDoFragment : BaseTodoFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
-
-       /* mainViewModel.observeData.observe(viewLifecycleOwner, Observer {
-            mainViewModel.loadAllTodo()
-        })*/
     }
 
     private fun initialize(){
-        initRecyclerView(binding.todoList,  mainViewModel.layout, mainViewModel.adapter)
-        mainViewModel.loadAllTodo()
+        Handler(Looper.getMainLooper()).postDelayed({
+            initViewModel()
+        }, 200L)
+    }
+
+    private fun initViewModel() {
+        mainViewModel.apply {
+            items.observe(viewLifecycleOwner, Observer {
+                binding.todosView.customAdapter.refresh(it)
+            })
+        }
     }
 }

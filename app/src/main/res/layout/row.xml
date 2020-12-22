@@ -3,18 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="todo"
+            type="com.example.myapplication.room.Todo" />
+    </data>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
             android:id="@+id/check"
-            android:focusable="true"
-            android:checked="false">
-        </CheckBox>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:padding="13dp"
+            android:src="@{todo == null || todo.checked == 0 ? @drawable/ic_baseline_check_box_outline_blank_24 : @drawable/ic_baseline_check_box_24}"
+            app:tint="#00FF00" />
+
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/check"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:checked="@{todo.checked == 1}"-->
+        <!--            android:focusable="true" />-->
 
         <LinearLayout
             android:layout_width="342dp"
@@ -25,6 +40,7 @@
                 android:id="@+id/txt_tit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{todo.title}"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -34,6 +50,7 @@
                 android:id="@+id/txt_con"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{todo.contents}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_tit"

@@ -26,7 +26,7 @@ class TodoListAdapter(
 ): RecyclerView.Adapter<TodoListAdapter.TodoHolder>() {
     private val TodoList =  mutableListOf<Todo>()
 
-    fun refresh(list:MutableList<Todo>) {
+    fun refresh(list:List<Todo>) {
         TodoList.apply {
             clear()
             addAll(list)
@@ -40,7 +40,7 @@ class TodoListAdapter(
     override fun getItemCount() = TodoList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoHolder {
-        val binding = RowBinding.inflate(layoutInflater,parent,false)
+        val binding = RowBinding.inflate(layoutInflater, parent, false)
         return TodoHolder(binding, onClickEditTodo)
     }
 
@@ -56,17 +56,17 @@ class TodoListAdapter(
             val todoRepository = TodoRepository(TodoApplication.database.todoDao())
 
 
-            binding.txtTit.text = todo.title
-            binding.txtCon.text = todo.contents
-            binding.check.isChecked = returnBool(todo)
-
-            binding.check.setOnClickListener {
-                val falseOrTrue = judgeBool(binding.check.isChecked)
-
-                CoroutineScope(Dispatchers.IO).launch {
-                    todoRepository.updateCheck(todo.id, falseOrTrue)
-                }
-            }
+//            binding.txtTit.text = todo.title
+//            binding.txtCon.text = todo.contents
+//            binding.check.isChecked = returnBool(todo)
+//
+//            binding.check.setOnClickListener {
+//                val falseOrTrue = judgeBool(binding.check.isChecked)
+//
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    todoRepository.updateCheck(todo.id, falseOrTrue)
+//                }
+//            }
 
             binding.more.setOnClickListener{
                 PopupMenu(itemView.context,it).also { popMenu ->

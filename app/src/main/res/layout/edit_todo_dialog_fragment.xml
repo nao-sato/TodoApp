@@ -4,8 +4,11 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.example.myapplication.ui.edit.EditTodoDialogViewModel" />
+            name="title"
+            type="String" />
+        <variable
+            name="contents"
+            type="String" />
     </data>
     <LinearLayout
         android:id="@+id/container"
@@ -19,7 +22,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{viewModel.title}"
+            android:text="@{title}"
             android:hint="@string/ed_title"
             tools:layout_editor_absoluteX="102dp"
             tools:layout_editor_absoluteY="203dp" />
@@ -30,7 +33,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{viewModel.contents}"
+            android:text="@{contents}"
             android:hint="@string/ed_contents"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="248dp" />

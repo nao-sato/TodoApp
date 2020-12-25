@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         initViewModel()
         initClick()
         initBottomNavigation()
-        initViewPager2()
         initData()
     }
 
@@ -61,14 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomNavigation() {
-        binding.navView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
-//            binding.viewPager.currentItem = when(item.itemId) {
-//                R.id.navigation_all -> 0
-//                R.id.navigation_undone -> 1
-//                else -> 2
-//            }
-            return@OnNavigationItemSelectedListener true
-        })
+
 
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
@@ -77,23 +69,6 @@ class MainActivity : AppCompatActivity() {
         ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
-    }
-
-    private fun initViewPager2() {
-//        binding.viewPager.apply {
-//            adapter = TodoPagerAdapter(supportFragmentManager)
-//            addOnPageChangeListener(object: ViewPager.OnPageChangeListener {
-//                override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
-//                override fun onPageScrollStateChanged(state: Int) {}
-//                override fun onPageSelected(position: Int) {
-//                    when(position) {
-//                        0 -> binding.navView.menu.findItem(R.id.navigation_all).isChecked = true
-//                        1 -> binding.navView.menu.findItem(R.id.navigation_undone).isChecked = true
-//                        else -> binding.navView.menu.findItem(R.id.navigation_done).isChecked = true
-//                    }
-//                }
-//            })
-//        }
     }
 
     private fun launchNewTodoDialogFragment(){

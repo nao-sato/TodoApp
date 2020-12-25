@@ -2,6 +2,7 @@ package com.example.myapplication.view
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -28,7 +29,7 @@ class TodosView: RecyclerView {
     init {
         adapter = customAdapter
         setHasFixedSize(true)
-        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
 
     class Adapter(private val context: Context): RecyclerView.Adapter<ViewHolder>() {

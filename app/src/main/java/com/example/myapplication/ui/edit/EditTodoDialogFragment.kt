@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.myapplication.R
@@ -25,9 +26,7 @@ import com.example.myapplication.ui.add.AddTodoDialogViewModel
 class EditTodoDialogFragment : DialogFragment() {
     private lateinit var binding: EditTodoDialogFragmentBinding
     private val viewModel: EditTodoDialogViewModel by viewModels()
-
-
-
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -37,7 +36,8 @@ class EditTodoDialogFragment : DialogFragment() {
         builder.setView(binding.root)
                 .setTitle(R.string.context_edit)
                 .setPositiveButton(R.string.dia_add) { _, _ ->
-                        viewModel.updateTodo(binding.diaTitle.text.toString(), binding.diaContents.text.toString())
+                    viewModel.updateTodo(binding.diaTitle.text.toString(), binding.diaContents.text.toString())
+                        mainViewModel.initData()
                 }
 
                 .setNegativeButton(R.string.dia_cancel){ _, _ ->

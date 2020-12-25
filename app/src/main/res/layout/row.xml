@@ -24,15 +24,8 @@
             android:src="@{todo == null || todo.checked == 0 ? @drawable/ic_baseline_check_box_outline_blank_24 : @drawable/ic_baseline_check_box_24}"
             app:tint="#00FF00" />
 
-        <!--        <CheckBox-->
-        <!--            android:id="@+id/check"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:checked="@{todo.checked == 1}"-->
-        <!--            android:focusable="true" />-->
-
         <LinearLayout
-            android:layout_width="342dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 

@@ -12,14 +12,6 @@ import kotlinx.coroutines.launch
 
 class EditTodoDialogViewModel : ViewModel() {
 
-//    val dialog = EditTodoDialogFragment()
-//    val bundle: Bundle? = dialog.arguments
-
-
-//    val id = bundle?.getInt("id")
-//    val title = bundle?.getString("title")
-//    val contents = bundle?.getString("contents")
-
     val title = MutableLiveData<String>()
     val contents = MutableLiveData<String>()
 
@@ -28,7 +20,6 @@ class EditTodoDialogViewModel : ViewModel() {
     private val todoRepository = TodoRepository(TodoApplication.database.todoDao())
 
     fun initData(bundle: Bundle?) {
-        Log.d("EditTodoDialogViewModel", "bundle:$bundle")
         id = bundle?.getInt("id") ?: 0
         title.postValue(bundle?.getString("title") ?: "")
         contents.postValue(bundle?.getString("contents") ?: "")
@@ -38,5 +29,6 @@ class EditTodoDialogViewModel : ViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             todoRepository.updateTodo(id, title, contents)
         }
+
     }
 }

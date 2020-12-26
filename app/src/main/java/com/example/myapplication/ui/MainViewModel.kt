@@ -1,9 +1,7 @@
 package com.example.myapplication.ui
 
-import android.content.ContentValues.TAG
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.TodoApplication

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Todo</string>
     <string name="title_home">全て</string>
     <string name="title_dashboard">未完了</string>
     <string name="title_notifications">完了</string>

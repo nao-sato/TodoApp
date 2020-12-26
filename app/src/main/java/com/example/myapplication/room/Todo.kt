@@ -1,6 +1,5 @@
 package com.example.myapplication.room
 
-import android.widget.CheckBox
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

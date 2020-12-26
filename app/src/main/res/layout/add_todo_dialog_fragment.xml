@@ -22,7 +22,9 @@
             android:text=""
             android:hint="@string/ed_title"
             tools:layout_editor_absoluteX="102dp"
-            tools:layout_editor_absoluteY="203dp" />
+            tools:layout_editor_absoluteY="203dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
 
         <EditText
             android:id="@+id/dia_contents"
@@ -33,6 +35,8 @@
             android:text=""
             android:hint="@string/ed_contents"
             tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="248dp" />
+            tools:layout_editor_absoluteY="248dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
     </LinearLayout>
 </layout>

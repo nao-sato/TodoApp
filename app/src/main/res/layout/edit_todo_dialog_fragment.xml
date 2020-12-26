@@ -20,17 +20,23 @@
             android:id="@+id/dia_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@{title}"
             android:hint="@string/ed_title"
             tools:layout_editor_absoluteX="102dp"
-            tools:layout_editor_absoluteY="203dp" />
+            tools:layout_editor_absoluteY="203dp"
+
+            />
 
         <EditText
             android:id="@+id/dia_contents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@{contents}"

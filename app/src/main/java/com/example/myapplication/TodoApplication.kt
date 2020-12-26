@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.room.Room
 import com.example.myapplication.room.AppDatabase
 
-//アプリが起動したときに初期化しておきたい処理や複数インスタンス化するような処理はここに書く
 class TodoApplication: Application() {
 
     override fun onCreate() {
@@ -26,8 +25,6 @@ class TodoApplication: Application() {
 
         }
     }
-
-
 
     private fun initRoom() {
         database = Room.databaseBuilder(

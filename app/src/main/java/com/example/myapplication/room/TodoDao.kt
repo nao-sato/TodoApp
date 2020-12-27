@@ -10,7 +10,7 @@ interface TodoDao {
 
 
     @Query("SELECT * FROM todo WHERE id = :id")
-    fun getTodoById(id:Int): Todo
+    fun getTodoById(id:Int): Todo?
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertTodo(todo: Todo)

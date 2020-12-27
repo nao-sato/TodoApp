@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.databinding.EmptyBinding
 import com.example.myapplication.databinding.RowBinding
 import com.example.myapplication.room.Todo
 import com.example.myapplication.ui.MainViewModel
@@ -36,6 +37,9 @@ class TodosView: RecyclerView {
 
         private val viewModel: MainViewModel by (context as ComponentActivity).viewModels()
         private val items =  mutableListOf<Todo>()
+        private var hasCompletedFirstRefresh = false
+
+        var emptyText = ""
 
         fun refresh(list:List<Todo>) {
             items.apply {
@@ -43,18 +47,34 @@ class TodosView: RecyclerView {
                 addAll(list)
             }
             notifyDataSetChanged()
+            hasCompletedFirstRefresh = true
         }
 
-        override fun getItemCount() = items.size
+        override fun getItemCount() = if (items.isEmpty()) {
+            if (hasCompletedFirstRefresh)
+                1
+            else
+                0
+        } else items.size
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return ItemViewHolder(RowBinding.inflate(LayoutInflater.from(context), parent, false))
-        }
+        override fun getItemViewType(position: Int): Int =
+            if (items.isEmpty()) VIEW_TYPE_EMPTY else VIEW_TYPE_ITEM
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+            if (viewType == VIEW_TYPE_EMPTY)
+                EmptyViewHolder(EmptyBinding.inflate(LayoutInflater.from(context), parent, false))
+            else
+                ItemViewHolder(RowBinding.inflate(LayoutInflater.from(context), parent, false))
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             when (holder) {
+                is EmptyViewHolder -> onBindViewHolder(holder)
                 is ItemViewHolder -> onBindViewHolder(holder, position)
             }
+        }
+
+        private fun onBindViewHolder(holder: EmptyViewHolder) {
+            holder.binding.emptyText = emptyText
         }
 
         private fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
@@ -80,5 +100,11 @@ class TodosView: RecyclerView {
         }
 
         class ItemViewHolder(val binding: RowBinding): RecyclerView.ViewHolder(binding.root)
+        class EmptyViewHolder(val binding: EmptyBinding): RecyclerView.ViewHolder(binding.root)
+
+        companion object {
+            private const val VIEW_TYPE_EMPTY = 0
+            private const val VIEW_TYPE_ITEM = 1
+        }
     }
 }

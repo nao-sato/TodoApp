@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentAllBinding
 import com.example.myapplication.databinding.FragmentDoneBinding
 import com.example.myapplication.ui.MainViewModel
@@ -39,6 +40,15 @@ class DoneToDoFragment : Fragment() {
         Handler(Looper.getMainLooper()).postDelayed({
             initViewModel()
         }, 200L)
+        initLayout()
+    }
+
+    private fun initLayout() {
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+        binding.todosView.customAdapter.emptyText = getString(R.string.empty_done)
     }
 
     private fun initViewModel() {

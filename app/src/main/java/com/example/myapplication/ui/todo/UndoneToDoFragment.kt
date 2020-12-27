@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentDoneBinding
 import com.example.myapplication.ui.MainViewModel
 import com.example.myapplication.databinding.FragmentUndoneBinding
@@ -40,6 +41,15 @@ class UndoneToDoFragment : Fragment() {
         Handler(Looper.getMainLooper()).postDelayed({
             initViewModel()
         }, 200L)
+        initLayout()
+    }
+
+    private fun initLayout() {
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+        binding.todosView.customAdapter.emptyText = getString(R.string.empty_register)
     }
 
     private fun initViewModel() {

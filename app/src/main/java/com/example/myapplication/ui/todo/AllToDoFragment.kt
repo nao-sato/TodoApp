@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentAllBinding
 import com.example.myapplication.ui.MainViewModel
 
@@ -31,16 +32,34 @@ class AllToDoFragment : Fragment() {
     }
 
     private fun initialize(){
+        initLayout()
         Handler(Looper.getMainLooper()).postDelayed({
             initViewModel()
         }, 200L)
     }
 
+    private fun initLayout() {
+        initSwipeRefreshLayout()
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+        binding.todosView.customAdapter.emptyText = getString(R.string.empty_register)
+    }
+
+    private fun initSwipeRefreshLayout() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            mainViewModel.updateData()
+        }
+    }
+
     private fun initViewModel() {
         mainViewModel.apply {
             items.observe(viewLifecycleOwner, Observer {
-                binding.todosView.customAdapter.refresh(it)
-                Log.d(TAG,"refresh:$it")
+                binding.apply {
+                    todosView.customAdapter.refresh(it)
+                    swipeRefreshLayout.isRefreshing = false
+                }
             })
         }
     }

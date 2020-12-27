@@ -31,7 +31,7 @@ class EditTodoDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val builder = AlertDialog.Builder(activity)
-        binding = EditTodoDialogFragmentBinding.inflate(layoutInflater,null, false)
+        binding = EditTodoDialogFragmentBinding.inflate(layoutInflater,null,false)
 
         builder.setView(binding.root)
                 .setTitle(R.string.context_edit)
@@ -39,7 +39,6 @@ class EditTodoDialogFragment : DialogFragment() {
                     viewModel.updateTodo(binding.diaTitle.text.toString(), binding.diaContents.text.toString())
                         mainViewModel.initData()
                 }
-
                 .setNegativeButton(R.string.dia_cancel){ _, _ ->
                 }
 
@@ -57,7 +56,7 @@ class EditTodoDialogFragment : DialogFragment() {
             contents.observe(this@EditTodoDialogFragment, Observer {
                 binding.contents = it
             })
-            initData(arguments)
+            initEditData(arguments)
         }
     }
 }

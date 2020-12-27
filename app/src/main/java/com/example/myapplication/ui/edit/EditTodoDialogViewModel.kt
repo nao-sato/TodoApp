@@ -19,7 +19,7 @@ class EditTodoDialogViewModel : ViewModel() {
 
     private val todoRepository = TodoRepository(TodoApplication.database.todoDao())
 
-    fun initData(bundle: Bundle?) {
+    fun initEditData(bundle: Bundle?) {
         id = bundle?.getInt("id") ?: 0
         title.postValue(bundle?.getString("title") ?: "")
         contents.postValue(bundle?.getString("contents") ?: "")

@@ -23,7 +23,7 @@ class AddTodoDialogFragment : DialogFragment() {
             .setTitle(R.string.dia_title)
             .setPositiveButton(R.string.dia_add){ _, _ ->
                 mainViewModel.addTodo(binding.diaTitle.text.toString(),binding.diaContents.text.toString())
-                    mainViewModel.initData()
+//                    mainViewModel.initData()
             }
             .setNegativeButton(R.string.dia_cancel){ _, _ ->
             }

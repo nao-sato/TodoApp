@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.room.Room
 import com.example.myapplication.room.AppDatabase
+import timber.log.Timber
 
 class TodoApplication: Application() {
 
@@ -22,7 +23,7 @@ class TodoApplication: Application() {
 
     private fun initTimber() {
         if (BuildConfig.DEBUG) {
-
+            Timber.plant(Timber.DebugTree())
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.myapplication.ui
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -13,6 +14,7 @@ import com.afollestad.materialdialogs.DialogCallback
 import com.afollestad.materialdialogs.MaterialDialog
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.databinding.ProgressDialogBinding
 import com.example.myapplication.room.Todo
 import com.example.myapplication.ui.add.AddTodoDialogFragment
 import com.example.myapplication.ui.edit.EditTodoDialogFragment
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val mainViewModel: MainViewModel by viewModels()
+
+    private var progressDialog : MaterialDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +53,12 @@ class MainActivity : AppCompatActivity() {
             })
             deleteTodo.observe(this@MainActivity, Observer {
                 showConfirmDeleteDialogFragment(it)
+            })
+            isShownProgress.observe(this@MainActivity, Observer {
+                if (it)
+                    showProgress()
+                else
+                    hideProgress()
             })
         }
     }
@@ -79,13 +89,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showEditDialogFragment(todo: Todo) {
-        val dialog = EditTodoDialogFragment()
-        var bundle = Bundle()
-        bundle.putInt("id", todo.id)
-        bundle.putString("title", todo.title)
-        bundle.putString("contents", todo.contents)
-        dialog.arguments = bundle
-        dialog.show(supportFragmentManager, "EditDialog")
+        EditTodoDialogFragment().apply {
+            arguments = Bundle().apply {
+                putInt(EditTodoDialogFragment.KEY_ID, todo.id)
+            }
+        }.show(supportFragmentManager, "EditDialog")
+//        val dialog = EditTodoDialogFragment()
+//        var bundle = Bundle()
+//        bundle.putInt(EditTodoDialogFragment.KEY_ID, todo.id)
+//        dialog.arguments = bundle
+//        dialog.show(supportFragmentManager, "EditDialog")
     }
 
     private fun showConfirmDeleteDialogFragment(todo: Todo) {
@@ -98,5 +111,19 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    private fun showProgress() {
+        hideProgress()
+        progressDialog = MaterialDialog(this).show {
+            cancelable(false)
+            val binding =  ProgressDialogBinding.inflate(LayoutInflater.from(context), null, false)
+            setContentView(binding.root)
+        }
+    }
+
+    private fun hideProgress() {
+        progressDialog?.dismiss()
+        progressDialog = null
     }
 }

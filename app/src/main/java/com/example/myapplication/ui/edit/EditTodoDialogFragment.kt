@@ -36,15 +36,14 @@ class EditTodoDialogFragment : DialogFragment() {
         builder.setView(binding.root)
                 .setTitle(R.string.context_edit)
                 .setPositiveButton(R.string.dia_add) { _, _ ->
-                    viewModel.updateTodo(binding.diaTitle.text.toString(), binding.diaContents.text.toString())
-                        mainViewModel.initData()
+                    viewModel.updateTodo(binding.diaTitle.text.toString(), binding.diaContents.text.toString()) {
+                        mainViewModel.updateData()
+                    }
                 }
                 .setNegativeButton(R.string.dia_cancel){ _, _ ->
                 }
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            initViewModel()
-        }, 10L)
+        initViewModel()
         return builder.create()
     }
 
@@ -56,7 +55,16 @@ class EditTodoDialogFragment : DialogFragment() {
             contents.observe(this@EditTodoDialogFragment, Observer {
                 binding.contents = it
             })
-            initEditData(arguments)
+            errorMessage.observe(this@EditTodoDialogFragment, Observer {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                dismiss()
+            })
+            id = arguments?.getInt(KEY_ID) ?: 0
+            initData()
         }
+    }
+
+    companion object {
+        const val KEY_ID = "key_id"
     }
 }

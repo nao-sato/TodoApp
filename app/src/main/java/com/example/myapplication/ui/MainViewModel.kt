@@ -17,20 +17,21 @@ class MainViewModel : ViewModel() {
     val editTodo = MutableLiveData<Todo>()
     val deleteTodo = MutableLiveData<Todo>()
 
+    val isShownProgress = MutableLiveData<Boolean>()
+
     private var todoRepository: TodoRepository = TodoRepository(TodoApplication.database.todoDao())
 
     fun initData() {
-        Handler(Looper.getMainLooper()).postDelayed({
-           updateData()
-        }, 50L)
+        showProgress()
+        updateData()
     }
 
     fun addTodo(title:String, contents:String){
         CoroutineScope(Dispatchers.IO).launch {
             val t = Todo(title,contents,0)
             todoRepository.insert(t)
+            updateData()
         }
-        initData()
     }
 
     fun updateTodoCheck(todo: Todo) {
@@ -38,8 +39,8 @@ class MainViewModel : ViewModel() {
         val willChecked = !isCurrentCheck
         CoroutineScope(Dispatchers.IO).launch {
             todoRepository.updateCheck(todo.id, if (willChecked) 1 else 0)
+            updateData()
         }
-        initData()
     }
 
     fun willDelete(todo: Todo) {
@@ -49,7 +50,7 @@ class MainViewModel : ViewModel() {
     fun delete(todo: Todo) {
         CoroutineScope(Dispatchers.IO).launch {
             todoRepository.deleteTodo(todo)
-            initData()
+            updateData()
         }
     }
 
@@ -60,6 +61,15 @@ class MainViewModel : ViewModel() {
     fun updateData() {
         CoroutineScope(Dispatchers.IO).launch {
             items.postValue(todoRepository.load())
+            hideProgress()
         }
+    }
+
+    private fun showProgress() {
+        isShownProgress.postValue(true)
+    }
+
+    private fun hideProgress() {
+        isShownProgress.postValue(false)
     }
 }

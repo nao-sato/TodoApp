@@ -11,4 +11,9 @@
     <string name="context_delete">削除</string>
     <string name="context_edit">編集</string>
     <string name="context_header">操作を選んでください</string>
+
+    <string name="error">エラーが起きました</string>
+
+    <string name="empty_register">タスクが登録されていません</string>
+    <string name="empty_done">まだ完了しているタスクはありません</string>
 </resources>

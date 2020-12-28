@@ -37,14 +37,22 @@ class DoneToDoFragment : Fragment() {
     }
 
     private fun initialize(){
+        initLayout()
         Handler(Looper.getMainLooper()).postDelayed({
             initViewModel()
         }, 200L)
-        initLayout()
     }
+
 
     private fun initLayout() {
         initRecyclerView()
+        initSwipeRefreshLayout()
+    }
+
+    private fun initSwipeRefreshLayout() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            mainViewModel.updateData()
+        }
     }
 
     private fun initRecyclerView() {
@@ -55,6 +63,7 @@ class DoneToDoFragment : Fragment() {
         mainViewModel.apply {
             items.observe(viewLifecycleOwner, Observer { list ->
                 binding.todosView.customAdapter.refresh(list.filter { it.checked == 1 })
+                binding.swipeRefreshLayout.isRefreshing = false
             })
         }
     }

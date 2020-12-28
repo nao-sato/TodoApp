@@ -2,7 +2,6 @@ package com.example.myapplication.view
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -15,9 +14,6 @@ import com.example.myapplication.databinding.EmptyBinding
 import com.example.myapplication.databinding.RowBinding
 import com.example.myapplication.room.Todo
 import com.example.myapplication.ui.MainViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class TodosView: RecyclerView {
 

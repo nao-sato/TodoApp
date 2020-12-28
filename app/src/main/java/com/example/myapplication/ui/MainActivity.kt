@@ -18,7 +18,6 @@ import com.example.myapplication.databinding.ProgressDialogBinding
 import com.example.myapplication.room.Todo
 import com.example.myapplication.ui.add.AddTodoDialogFragment
 import com.example.myapplication.ui.edit.EditTodoDialogFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -94,18 +93,13 @@ class MainActivity : AppCompatActivity() {
                 putInt(EditTodoDialogFragment.KEY_ID, todo.id)
             }
         }.show(supportFragmentManager, "EditDialog")
-//        val dialog = EditTodoDialogFragment()
-//        var bundle = Bundle()
-//        bundle.putInt(EditTodoDialogFragment.KEY_ID, todo.id)
-//        dialog.arguments = bundle
-//        dialog.show(supportFragmentManager, "EditDialog")
     }
 
     private fun showConfirmDeleteDialogFragment(todo: Todo) {
         MaterialDialog(this).show {
-            title(text = "消しますか？")
-            negativeButton(text = "キャンセル")
-            positiveButton(text = "消す", click = object: DialogCallback {
+            title(R.string.delete_confirm)
+            negativeButton(R.string.delete_back)
+            positiveButton(R.string.context_delete, click = object: DialogCallback {
                 override fun invoke(p1: MaterialDialog) {
                     mainViewModel.delete(todo)
                 }

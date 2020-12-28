@@ -1,19 +1,34 @@
 <resources>
     <string name="app_name">Todo</string>
+
+<!--naviのタイトル-->
     <string name="title_home">全て</string>
     <string name="title_dashboard">未完了</string>
     <string name="title_notifications">完了</string>
+
+<!--編集ダイアログ-->
     <string name="ed_title">タイトル</string>
     <string name="ed_contents">内容</string>
+
+<!--追加ダイアログ-->
     <string name="dia_title">新しいTodo</string>
     <string name="dia_add">追加</string>
     <string name="dia_cancel">取り消し</string>
+
+<!--ポップアップメニュー-->
     <string name="context_delete">削除</string>
     <string name="context_edit">編集</string>
     <string name="context_header">操作を選んでください</string>
 
-    <string name="error">エラーが起きました</string>
+<!--削除ダイアログ-->
+    <string name="delete_confirm">削除しますか？</string>
+    <string name="delete_delete">削除</string>
+    <string name="delete_back">戻る</string>
 
+<!--リストが空の場合の表示-->
     <string name="empty_register">タスクが登録されていません</string>
     <string name="empty_done">まだ完了しているタスクはありません</string>
+
+<!--エラー-->
+    <string name="error">エラーが起きました</string>
 </resources>

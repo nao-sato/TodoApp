@@ -3,11 +3,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
- <data>
-     <variable
-         name="viewModel"
-         type="com.example.myapplication.ui.MainViewModel" />
- </data>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.ui.MainViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,7 +31,7 @@
                 tools:listitem="@layout/row"
                 />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

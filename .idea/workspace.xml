@@ -32,29 +32,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="・レイアウトマネージャーを横向きから縦向き修正。&#10;・row.XMLのズレを修正&#10;・削除機能を実装&#10;・編集機能、追加機能のそれぞれにmainViewModelのItemをアップロードする処理を実装。&#10;・initData()のタイミングを0.05秒遅らせ、DAOの処理を済ませた上で読み込みをさせる。&#10;・レイアウトの微調整">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/komorebi.ttf" afterDir="false" />
+    <list default="true" id="20b95856-038e-490b-a413-3b6123c723b8" name="Default Changelist" comment="完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/TodoApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/room/AppDatabase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/edit/EditTodoDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/edit/EditTodoDialogViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/todo/DoneToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/todo/DoneToDoFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/todo/UndoneToDoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/todo/UndoneToDoFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/view/TodosView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/view/TodosView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/empty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/empty.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_done.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_done.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_undone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_undone.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/satounao/.android/avd/Pixel_3a_API_30_x86.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -93,7 +83,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_30_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-22T03:03:38.998Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-10T02:56:50.266Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -102,7 +92,7 @@
     <property name="android-custom-view/Users/satounao/Documents/localRepository/TodoApp/app/src/main/java/com/example/myapplication/view/TodosView.kt_SELECTED" value="TodosView" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="multi-representation-preview/Users/satounao/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
-    <property name="multi-representation-preview/Users/satounao/Documents/localRepository/TodoApp/app/src/main/java/com/example/myapplication/view/TodosView.kt_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/satounao/Documents/localRepository/TodoApp/app/src/main/java/com/example/myapplication/view/TodosView.kt_selected" value="" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -121,14 +111,13 @@
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="My_Application.app" />
+      <module name="TodoApp.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
-      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -179,7 +168,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -247,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608964048771</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完成">
+      <created>1609136152860</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609136152860</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,7 +267,8 @@
     <MESSAGE value="・レイアウトマネージャーを横向きから縦向き修正。&#10;・row.XMLのズレを修正&#10;・削除機能を実装&#10;・編集機能、追加機能のそれぞれにmainViewModelのItemをアップロードする処理を実装。&#10;・initData()のタイミングを0.05秒遅らせ、DAOの処理を済ませた上で読み込みをさせる。" />
     <MESSAGE value="・レイアウトの微調整" />
     <MESSAGE value="・レイアウトマネージャーを横向きから縦向き修正。&#10;・row.XMLのズレを修正&#10;・削除機能を実装&#10;・編集機能、追加機能のそれぞれにmainViewModelのItemをアップロードする処理を実装。&#10;・initData()のタイミングを0.05秒遅らせ、DAOの処理を済ませた上で読み込みをさせる。&#10;・レイアウトの微調整" />
-    <option name="LAST_COMMIT_MESSAGE" value="・レイアウトマネージャーを横向きから縦向き修正。&#10;・row.XMLのズレを修正&#10;・削除機能を実装&#10;・編集機能、追加機能のそれぞれにmainViewModelのItemをアップロードする処理を実装。&#10;・initData()のタイミングを0.05秒遅らせ、DAOの処理を済ませた上で読み込みをさせる。&#10;・レイアウトの微調整" />
+    <MESSAGE value="完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="385" y="239" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608605466855">
@@ -295,9 +292,10 @@
     </state>
     <state x="473" y="248" width="494" height="432" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1607953012217" />
     <state x="473" y="247" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.812@0.23.1440.812" timestamp="1608300432358" />
-    <state x="100" y="132" width="1240" height="597" key="AVDManager" timestamp="1608779862208">
-      <screen x="0" y="23" width="1440" height="811" />
+    <state x="100" y="121" width="1240" height="663" key="AVDManager" timestamp="1610247441719">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="100" y="121" width="1240" height="663" key="AVDManager/0.0.1440.900@0.0.1440.900" timestamp="1610247441719" />
     <state x="100" y="132" width="1240" height="597" key="AVDManager/0.23.1440.811@0.23.1440.811" timestamp="1608779862208" />
     <state x="100" y="132" width="1240" height="597" key="AVDManager/0.23.1440.812@0.23.1440.812" timestamp="1608702451360" />
     <state x="308" y="192" key="AndroidCreateResourceDirectoryDialog" timestamp="1609034225612">
@@ -308,41 +306,42 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607827309701" />
-    <state width="1398" height="203" key="GridCell.Tab.0.bottom" timestamp="1609135965163">
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom" timestamp="1610245830138">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609135965163" />
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1610245830138" />
     <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1608780115379" />
     <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1608896685633" />
     <state width="1396" height="203" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1608894631732" />
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1607961472186" />
-    <state width="1398" height="203" key="GridCell.Tab.0.center" timestamp="1609135965162">
+    <state width="1398" height="203" key="GridCell.Tab.0.center" timestamp="1610245830137">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609135965162" />
+    <state width="1398" height="203" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1610245830137" />
     <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1608780115379" />
     <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1608896685633" />
     <state width="1396" height="203" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1608894631731" />
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1607961472184" />
-    <state width="1398" height="203" key="GridCell.Tab.0.left" timestamp="1609135965161">
+    <state width="1398" height="203" key="GridCell.Tab.0.left" timestamp="1610245830136">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609135965161" />
+    <state width="1398" height="203" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1610245830136" />
     <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1608780115379" />
     <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1608896685633" />
     <state width="1396" height="203" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1608894631730" />
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1607961472183" />
-    <state width="1398" height="203" key="GridCell.Tab.0.right" timestamp="1609135965162">
+    <state width="1398" height="203" key="GridCell.Tab.0.right" timestamp="1610245830137">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609135965162" />
+    <state width="1398" height="203" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1610245830137" />
     <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1608780115379" />
     <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1608896685633" />
     <state width="1396" height="203" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1608894631731" />
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1607961472185" />
-    <state x="320" y="168" key="Vcs.Push.Dialog.v2" timestamp="1608964132782">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1610162274392">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1610162274392" />
     <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1608636354557" />
     <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1608897146972" />
     <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.814@0.23.1440.814" timestamp="1608964132782" />

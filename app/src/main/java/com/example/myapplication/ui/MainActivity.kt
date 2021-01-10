@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBinding() {
-        binding = DataBindingUtil.setContentView(this,
-            R.layout.activity_main
-        )
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 
     private fun initViewModel() {

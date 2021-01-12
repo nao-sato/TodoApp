@@ -56,13 +56,13 @@ class DoneToDoFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.todosView.customAdapter.emptyText = getString(R.string.empty_done)
+        binding.articlesView.customAdapter.emptyText = getString(R.string.empty_done)
     }
 
     private fun initViewModel() {
         mainViewModel.apply {
             items.observe(viewLifecycleOwner, Observer { list ->
-                binding.todosView.customAdapter.refresh(list.filter { it.checked == 1 })
+                binding.articlesView.customAdapter.refresh(list.filter { it.checked == 1 })
                 binding.swipeRefreshLayout.isRefreshing = false
             })
         }

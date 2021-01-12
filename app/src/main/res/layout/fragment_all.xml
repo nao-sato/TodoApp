@@ -24,8 +24,8 @@
             app:layout_constraintVertical_bias="0.0">
 
 
-            <com.example.myapplication.view.TodosView
-                android:id="@+id/todos_view"
+            <com.example.myapplication.view.ArticlesView
+                android:id="@+id/articles_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/row"

@@ -44,7 +44,7 @@ class AllToDoFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.todosView.customAdapter.emptyText = getString(R.string.empty_register)
+        binding.articlesView.customAdapter.emptyText = getString(R.string.empty_register)
     }
 
     private fun initSwipeRefreshLayout() {
@@ -57,7 +57,7 @@ class AllToDoFragment : Fragment() {
         mainViewModel.apply {
             items.observe(viewLifecycleOwner, Observer {
                 binding.apply {
-                    todosView.customAdapter.refresh(it)
+                    articlesView.customAdapter.refresh(it)
                     swipeRefreshLayout.isRefreshing = false
                 }
             })

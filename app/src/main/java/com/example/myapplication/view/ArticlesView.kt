@@ -7,26 +7,29 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.TodoApplication
 import com.example.myapplication.databinding.EmptyBinding
 import com.example.myapplication.databinding.RowBinding
 import com.example.myapplication.room.Todo
 import com.example.myapplication.ui.MainViewModel
 
-class TodosView: RecyclerView {
+class ArticlesView: RecyclerView {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     val customAdapter by lazy { Adapter(context) }
-
+    val appContext = TodoApplication.applicationContext
     init {
         adapter = customAdapter
         setHasFixedSize(true)
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        addItemDecoration(DividerItemDecoration(appContext,LinearLayoutManager(appContext).orientation))
     }
 
     class Adapter(private val context: Context): RecyclerView.Adapter<ViewHolder>() {

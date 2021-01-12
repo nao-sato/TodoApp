@@ -56,13 +56,13 @@ class UndoneToDoFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.todosView.customAdapter.emptyText = getString(R.string.empty_register)
+        binding.articlesView.customAdapter.emptyText = getString(R.string.empty_register)
     }
 
     private fun initViewModel() {
         mainViewModel.apply {
             items.observe(viewLifecycleOwner, Observer { list ->
-                binding.todosView.customAdapter.refresh(list.filter { it.checked == 0 })
+                binding.articlesView.customAdapter.refresh(list.filter { it.checked == 0 })
                 binding.swipeRefreshLayout.isRefreshing = false
             })
         }
